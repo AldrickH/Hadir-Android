@@ -17,10 +17,8 @@ public class MyClassFragment extends Fragment {
 
     private MyClassViewModel myClassViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        myClassViewModel =
-                ViewModelProviders.of(this).get(MyClassViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        myClassViewModel = ViewModelProviders.of(this).get(MyClassViewModel.class);
         View root = inflater.inflate(R.layout.fragment_myclass, container, false);
 //        final TextView textView = root.findViewById(R.id.text_myclass);
         myClassViewModel.getText().observe(this, new Observer<String>() {
