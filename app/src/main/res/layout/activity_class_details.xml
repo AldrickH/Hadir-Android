@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/classDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Class Details"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_below="@+id/classDetails"/>
+
+    <TextView
+        android:id="@+id/kalkulusTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kalkulus"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/divider"/>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_below="@id/kalkulusTxt"/>
+
+    <TextView
+        android:id="@+id/tanggalTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Wed, 13 Nov 2019"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/divider2"/>
+
+    <TextView
+        android:id="@+id/jlhMurid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tanggalTxt"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:text="15"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/muridTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student"
+        android:layout_below="@id/jlhMurid"
+        android:layout_marginStart="55dp"
+        />
+
+    <TextView
+        android:id="@+id/jlhTelat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tanggalTxt"
+        android:layout_toEndOf="@id/jlhMurid"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:text="0"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/telatTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Late"
+        android:layout_below="@id/jlhTelat"
+        android:layout_toEndOf="@id/muridTxt"
+        android:layout_marginStart="45dp"
+        />
+
+    <TextView
+        android:id="@+id/jlhAbsen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tanggalTxt"
+        android:layout_toEndOf="@id/jlhTelat"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/jlhTelat"
+        android:text="1"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/absenTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Absent"
+        android:layout_toRightOf="@id/telatTxt"
+        android:layout_toEndOf="@id/telatTxt"
+        android:layout_below="@id/jlhAbsen"
+        android:layout_marginStart="40dp"
+        />
+
+    <TextView
+        android:id="@+id/jlhPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tanggalTxt"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/jlhAbsen"
+        android:text="0"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/permissionTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jlhPermission"
+        android:layout_marginStart="20dp"
+        android:layout_toRightOf="@id/absenTxt"
+        android:text="Permission" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="481dp"
+        android:layout_below="@id/telatTxt"
+        android:layout_marginTop="18dp" />
+
+
+
+
+</RelativeLayout>
