@@ -1,144 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <TextView
-        android:id="@+id/classDetails"
+        android:id="@+id/txtClassDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Class Details"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"/>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        android:layout_below="@+id/classDetails"/>
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/kalkulusTxt"
+        android:id="@+id/txtSubject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kalkulus"
+        android:layout_marginTop="20dp"
+        android:text="{ Subject }"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/divider"/>
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        android:layout_below="@id/kalkulusTxt"/>
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tanggalTxt"
+        android:id="@+id/txtSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="{ Time } | { Day and Date }" />
+
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Wed, 13 Nov 2019"
-        android:textSize="14sp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/divider2"/>
-
-    <TextView
-        android:id="@+id/jlhMurid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tanggalTxt"
-        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
-        android:text="15"
-        android:textStyle="bold" />
+        android:alignmentMode="alignMargins"
+        android:columnCount="4"
+        android:rowCount="1">
 
-    <TextView
-        android:id="@+id/muridTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Student"
-        android:layout_below="@id/jlhMurid"
-        android:layout_marginStart="55dp"
-        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-    <TextView
-        android:id="@+id/jlhTelat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tanggalTxt"
-        android:layout_toEndOf="@id/jlhMurid"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:text="0"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtTotalStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="15"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/telatTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Late"
-        android:layout_below="@id/jlhTelat"
-        android:layout_toEndOf="@id/muridTxt"
-        android:layout_marginStart="45dp"
-        />
+            <TextView
+                android:id="@+id/txtStudent"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Present"
+                android:textAlignment="center" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/jlhAbsen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tanggalTxt"
-        android:layout_toEndOf="@id/jlhTelat"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/jlhTelat"
-        android:text="1"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-    <TextView
-        android:id="@+id/absenTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Absent"
-        android:layout_toRightOf="@id/telatTxt"
-        android:layout_toEndOf="@id/telatTxt"
-        android:layout_below="@id/jlhAbsen"
-        android:layout_marginStart="40dp"
-        />
+            <TextView
+                android:id="@+id/txtTotalLate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/jlhPermission"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tanggalTxt"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/jlhAbsen"
-        android:text="0"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtLate"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Late"
+                android:textAlignment="center" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/permissionTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/jlhPermission"
-        android:layout_marginStart="20dp"
-        android:layout_toRightOf="@id/absenTxt"
-        android:text="Permission" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/txtTotalAbsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtAbsent"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Absent"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/txtTotalPermission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="0"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtExcuse"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="Excuse"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </GridLayout>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listViewStudentClass"
         android:layout_width="match_parent"
-        android:layout_height="481dp"
-        android:layout_below="@id/telatTxt"
-        android:layout_marginTop="18dp" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp" />
 
-
-
-
-</RelativeLayout>
+</LinearLayout>
