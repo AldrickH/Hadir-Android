@@ -28,11 +28,12 @@ public class ClassDetails extends AppCompatActivity {
 
         listViewStudent = findViewById(R.id.listViewStudentClass);
         txtSchedule = findViewById(R.id.txtSchedule);
-        listStudent = new ArrayList<String>();
+        listStudent = new ArrayList<>();
 
         listStudent.add(0, "Aldrick Handinata");
         listStudent.add(1, "Levina Khomulia");
         listStudent.add(2, "Secretary Han");
+
 
         ListAdapter listAdapter = new ArrayAdapter<String>(ClassDetails.this, android.R.layout.simple_list_item_multiple_choice, listStudent) {
             @Override
@@ -46,7 +47,6 @@ public class ClassDetails extends AppCompatActivity {
                 return view;
             }
         };
-
         listViewStudent.setAdapter(listAdapter);
 
 //        listStudent.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, arrayMurid));
