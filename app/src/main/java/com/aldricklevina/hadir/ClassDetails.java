@@ -42,16 +42,6 @@ public class ClassDetails extends AppCompatActivity {
                 // Set the border of View (ListView Item)
                 view.setBackground(getContext().getDrawable(R.drawable.rounded_corner));
 
-                // panggil layout list_mhs
-//                listView.Layout
-//                listView.setLayoutMode();
-//                LayoutInflater inflater = (LayoutInflater) .getLayoutInflater();
-//                View v = inflater.inflate(R.layout.list_mhs, null);
-//
-//                TextView namaMhs;
-//                namaMhs = v.findViewById(R.id.txtNamaMhs);
-//                namaMhs.setText(listView[position]);
-
                 // Return the view
                 return view;
             }
