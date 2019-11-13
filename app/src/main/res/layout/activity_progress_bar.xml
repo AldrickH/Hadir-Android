@@ -1,47 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/progressBarBiru"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
         app:background_progressbar_color="#87CEFA"
         app:background_progressbar_width="10dp"
         app:progressbar_color="#F44336"
-        app:progressbar_width="10dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"
-        />
+        app:progressbar_width="10dp" />
 
     <ImageView
         android:id="@+id/fotoStudent"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/foto_student"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="115dp"
         android:maxWidth="50dp"
         android:maxHeight="50dp"
-        android:layout_marginTop="115dp"
-        android:layout_marginStart="110dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerHorizontal="true"
-        >
-    </ImageView>
+        android:src="@drawable/foto_student" />
 
     <androidx.cardview.widget.CardView
-        android:layout_below="@id/progressBarBiru"
         android:layout_width="300dp"
         android:layout_height="220dp"
-        android:layout_marginTop="40dp"
+        android:layout_below="@id/progressBarBiru"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="55dp"
+        android:layout_marginTop="40dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
-        android:layout_centerHorizontal="true"
 
         >
 
@@ -50,22 +46,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/progressBarBiru"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:text="Levina Khomulia"
-            android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="90dp"
-            android:layout_marginStart="40dp"
-            android:columnCount="2"
-            android:rowCount="3"
             android:layout_gravity="center_horizontal"
-            >
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="90dp"
+            android:columnCount="2"
+            android:rowCount="3">
 
             <!--                Row 1-->
             <TextView
@@ -82,9 +76,9 @@
                 android:id="@+id/txtIsiNIM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:text="03082170019"
-                android:textSize="16sp"
-                android:layout_marginStart="30dp">
+                android:textSize="16sp">
 
             </TextView>
 
@@ -93,10 +87,10 @@
                 android:id="@+id/txtGPA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="GPA"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp">
+                android:textStyle="bold">
 
             </TextView>
 
@@ -104,10 +98,10 @@
                 android:id="@+id/txtIsiGPA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3.78"
-                android:textSize="16sp"
                 android:layout_marginStart="99dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:text="3.78"
+                android:textSize="16sp">
 
             </TextView>
 
@@ -116,10 +110,10 @@
                 android:id="@+id/txtIntake"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="Intake"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp">
+                android:textStyle="bold">
 
             </TextView>
 
@@ -127,10 +121,10 @@
                 android:id="@+id/txtIsiIntake"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2017"
-                android:textSize="16sp"
                 android:layout_marginStart="95dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:text="2017"
+                android:textSize="16sp">
 
             </TextView>
 
