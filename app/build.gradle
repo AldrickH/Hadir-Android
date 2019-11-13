@@ -36,4 +36,7 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation 'com.mikhaellopez:circularprogressbar:1.0.0'
     implementation 'com.mikhaellopez:circularprogressbar:1.0.0'
+
+
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 }

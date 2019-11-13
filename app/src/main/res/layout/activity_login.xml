@@ -7,12 +7,26 @@
     android:padding="16dp"
     tools:context=".Login">
 
+    <TextView
+        android:id="@+id/txtLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        >
+
+    </TextView>
+
     <LinearLayout
         android:id="@+id/layoutImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/txtLogIn">
 
         <ImageView
             android:layout_width="150dp"
@@ -71,9 +85,11 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/txtGoToSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15sp"
+                android:textStyle="bold"
                 android:text="Sign Up" />
 
         </LinearLayout>
@@ -84,7 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:text="LOGIN" />
+            android:text="LOGIN"
+            />
 
     </LinearLayout>
 

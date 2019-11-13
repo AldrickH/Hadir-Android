@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -11,9 +12,15 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.aldricklevina.hadir.Model.ClassInfo;
+import com.aldricklevina.hadir.Model.ClassInfoAdapter;
 import com.aldricklevina.hadir.R;
 
+import java.util.ArrayList;
+
 public class ProfileFragment extends Fragment {
+
+
 
     private ProfileViewModel profileViewModel;
 
@@ -26,5 +33,13 @@ public class ProfileFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ImageView imageStudent = view.findViewById(R.id.fotoDosen);
+        imageStudent.setImageResource(R.drawable.foto_dosen);
     }
 }
