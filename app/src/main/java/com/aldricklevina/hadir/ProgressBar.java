@@ -23,7 +23,7 @@ public class ProgressBar extends AppCompatActivity {
         circularProgressBar.setProgressWithAnimation(90, animationDuration); // Default duration = 1500ms
 
         ImageView imageStudent = findViewById(R.id.fotoStudent);
-        imageStudent.setImageResource(R.drawable.foto_mhs);
+        imageStudent.setImageResource(R.drawable.foto_student);
 
     }
 }
