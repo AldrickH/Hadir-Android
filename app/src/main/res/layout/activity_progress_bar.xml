@@ -37,9 +37,7 @@
         android:layout_marginStart="55dp"
         android:layout_marginTop="40dp"
         app:cardCornerRadius="12dp"
-        app:cardElevation="8dp"
-
-        >
+        app:cardElevation="8dp">
 
         <TextView
             android:id="@+id/txtNama"
@@ -61,16 +59,13 @@
             android:columnCount="2"
             android:rowCount="3">
 
-            <!--                Row 1-->
             <TextView
                 android:id="@+id/txtNIM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NIM"
                 android:textSize="16sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtIsiNIM"
@@ -78,11 +73,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:text="03082170019"
-                android:textSize="16sp">
+                android:textSize="16sp" />
 
-            </TextView>
-
-            <!--                Row 2-->
             <TextView
                 android:id="@+id/txtGPA"
                 android:layout_width="wrap_content"
@@ -90,9 +82,7 @@
                 android:layout_marginTop="10dp"
                 android:text="GPA"
                 android:textSize="16sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtIsiGPA"
@@ -101,11 +91,8 @@
                 android:layout_marginStart="99dp"
                 android:layout_marginTop="10dp"
                 android:text="3.78"
-                android:textSize="16sp">
+                android:textSize="16sp" />
 
-            </TextView>
-
-            <!--                Row 3-->
             <TextView
                 android:id="@+id/txtIntake"
                 android:layout_width="wrap_content"
@@ -113,9 +100,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Intake"
                 android:textSize="16sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtIsiIntake"
@@ -124,9 +109,7 @@
                 android:layout_marginStart="95dp"
                 android:layout_marginTop="10dp"
                 android:text="2017"
-                android:textSize="16sp">
-
-            </TextView>
+                android:textSize="16sp" />
 
         </GridLayout>
 
