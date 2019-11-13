@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/layoutTop"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
 
         <ImageView
             android:layout_width="100dp"
@@ -17,12 +18,13 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true" />
+
     </RelativeLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/layoutTop"
+        android:padding="10dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -235,8 +237,8 @@
 
             </LinearLayout>
 
-            <ListView
-                android:id="@+id/listViewClass"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recViewClassInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -245,6 +247,6 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-</RelativeLayout>
+</LinearLayout>
