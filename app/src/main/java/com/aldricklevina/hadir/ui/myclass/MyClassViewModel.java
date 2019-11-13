@@ -10,7 +10,6 @@ public class MyClassViewModel extends ViewModel {
 
     public MyClassViewModel() {
         mText = new MutableLiveData<>();
-//        mText.setValue("This is my class fragment");
     }
 
     public LiveData<String> getText() {
