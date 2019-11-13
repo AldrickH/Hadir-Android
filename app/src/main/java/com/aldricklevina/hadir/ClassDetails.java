@@ -1,63 +1,51 @@
 package com.aldricklevina.hadir;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import java.text.DateFormat;
+import com.aldricklevina.hadir.Model.Student;
+import com.aldricklevina.hadir.Model.StudentAdapter;
+
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class ClassDetails extends AppCompatActivity {
 
-    private ArrayList<String> listStudent;
-    private ListView listViewStudent;
-    private TextView txtSchedule;
+    private RecyclerView recViewStudent;
+    private RecyclerView.LayoutManager recViewStudentLayoutManager;
+    private StudentAdapter recViewStudentAdapter;
+
+    private ArrayList<Student> listStudent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_details);
 
-        listViewStudent = findViewById(R.id.listViewStudentClass);
-        txtSchedule = findViewById(R.id.txtSchedule);
+        recViewStudent = findViewById(R.id.recViewStudentClass);
+        recViewStudentLayoutManager = new LinearLayoutManager(this);
+
         listStudent = new ArrayList<>();
 
-        listStudent.add(0, "Aldrick Handinata");
-        listStudent.add(1, "Levina Khomulia");
-        listStudent.add(2, "Secretary Han");
+        listStudent.add(new Student("Aldrick Handinata"));
+        listStudent.add(new Student("Aldrick Handinata"));
+        listStudent.add(new Student("Aldrick Handinata"));
 
+        recViewStudentAdapter = new StudentAdapter(listStudent);
 
-        ListAdapter listAdapter = new ArrayAdapter<String>(ClassDetails.this, android.R.layout.simple_list_item_multiple_choice, listStudent) {
+        recViewStudent.setLayoutManager(recViewStudentLayoutManager);
+        recViewStudent.setAdapter(recViewStudentAdapter);
+
+        recViewStudent.setFocusable(false);
+
+        recViewStudentAdapter.setOnItemClickListener(new StudentAdapter.OnItemClickListener() {
             @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                View view = super.getView(position, convertView, parent);
-
-                // Set the border of View (ListView Item)
-                view.setBackground(getContext().getDrawable(R.drawable.rounded_corner));
-
-                // Return the view
-                return view;
+            public void OnItemClick(int position) {
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.show(getSupportFragmentManager(), "info");
             }
-        };
-        listViewStudent.setAdapter(listAdapter);
-
-//        listStudent.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice, arrayMurid));
-        listViewStudent.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
-
-        Calendar calendar = Calendar.getInstance();
-        String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
-
-        txtSchedule.setText(currentDate);
-
-//        listStudent.setBackgroundResource(R.drawable.rounded_corner);
-
+        });
     }
 }

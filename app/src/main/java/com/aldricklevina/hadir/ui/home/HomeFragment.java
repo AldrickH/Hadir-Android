@@ -1,20 +1,20 @@
 package com.aldricklevina.hadir.ui.home;
 
-import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.aldricklevina.hadir.ClassDetails;
 import com.aldricklevina.hadir.Model.ClassInfo;
 import com.aldricklevina.hadir.Model.ClassInfoAdapter;
 import com.aldricklevina.hadir.R;
@@ -23,9 +23,11 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
-    private ArrayList<ClassInfo> listClass;
-    private ListView listViewClass;
-    private ArrayAdapter listAdapter;
+    private ArrayList<ClassInfo> listClassInfo;
+
+    private RecyclerView recViewClassInfo;
+    private ClassInfoAdapter recViewClassInfoAdapter;
+    private RecyclerView.LayoutManager recViewClassInfoLayoutManager;
 
     private HomeViewModel homeViewModel;
 
@@ -48,49 +50,36 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listViewClass = view.findViewById(R.id.listViewClass);
+        recViewClassInfo = view.findViewById(R.id.recViewClassInfo);
+        recViewClassInfoLayoutManager = new LinearLayoutManager(getActivity());
 
-        listClass = new ArrayList<>();
+        listClassInfo = new ArrayList<>();
+        listClassInfo.add(new ClassInfo("Math", "Kalkulus", "12.00 AM"));
+        listClassInfo.add(new ClassInfo("Math", "DATA", "11.00 AM"));
+        listClassInfo.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
+        listClassInfo.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
+        listClassInfo.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
+        listClassInfo.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
+        listClassInfo.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
+        listClassInfo.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
 
-        listClass.add(new ClassInfo("Math", "Kalkulus", "12.00 AM"));
-        listClass.add(new ClassInfo("Math", "DATA", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
+        recViewClassInfoAdapter = new ClassInfoAdapter(listClassInfo);
 
-        listAdapter = new ClassInfoAdapter(getActivity(), listClass);
+        recViewClassInfo.setLayoutManager(recViewClassInfoLayoutManager);
+        recViewClassInfo.setAdapter(recViewClassInfoAdapter);
 
-        listViewClass.setAdapter(listAdapter);
-        listAdapter.notifyDataSetChanged();
-        setListViewHeightBasedOnChildren(listViewClass);
-        listViewClass.setFocusable(false);
-    }
+        recViewClassInfo.setFocusable(false);
 
-    public static void setListViewHeightBasedOnChildren(ListView listView) {
-        ListAdapter listAdapter = listView.getAdapter();
-        if (listAdapter == null) return;
-        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
-        int totalHeight = 0;
-        View view = null;
-        for (int i = 0; i < listAdapter.getCount(); i++) {
-            view = listAdapter.getView(i, view, listView);
+        recViewClassInfoAdapter.setOnItemClickListener(new ClassInfoAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(int position) {
+                String tipe = listClassInfo.get(position).getType();
 
-            if (i == 0) {
-                view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, ActionBar.LayoutParams.WRAP_CONTENT));
+                if (tipe.equals("Math")) {
+                    Intent i = new Intent(getActivity(), ClassDetails.class);
+                    startActivity(i);
+                }
             }
-
-            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
-            totalHeight += view.getMeasuredHeight();
-        }
-
-        ViewGroup.LayoutParams params = listView.getLayoutParams();
-
-        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
-
-        listView.setLayoutParams(params);
-        listView.requestLayout();
+        });
     }
 }
