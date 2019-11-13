@@ -10,4 +10,16 @@ public class ClassInfo {
         this.name = _name;
         this.schedule = _schedule;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSchedule() {
+        return schedule;
+    }
+
+    public String getType() {
+        return type;
+    }
 }

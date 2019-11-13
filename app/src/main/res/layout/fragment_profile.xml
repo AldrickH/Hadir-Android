@@ -2,29 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        >
+        android:layout_marginTop="150dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/fotoDosen"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/foto_dosen"
                 android:layout_centerHorizontal="true"
                 android:elevation="100dp"
-                >
+                android:src="@drawable/foto_dosen">
 
             </ImageView>
 
@@ -32,41 +28,38 @@
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="235dp"
-                android:layout_marginTop="60dp"
-                android:layout_marginStart="100dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
                 android:layout_centerHorizontal="true"
-                >
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="60dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
 
-                    <TextView
-                        android:id="@+id/txtUsername"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="60dp"
-                        android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:text="Username"/>
+                <TextView
+                    android:id="@+id/txtUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Username"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/txtIsiUsername"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="85dp"
-                        android:textSize="16sp"
-                        android:text="Mulia Dhamma"/>
+                <TextView
+                    android:id="@+id/txtIsiUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="85dp"
+                    android:text="Mulia Dhamma"
+                    android:textSize="16sp" />
 
 
                 <ImageView
                     android:layout_width="260dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/stroke"
-                    android:layout_marginTop="115dp"
                     android:layout_marginStart="25dp"
-
-                    >
+                    android:layout_marginTop="115dp"
+                    android:src="@drawable/stroke">
 
                 </ImageView>
 
@@ -76,9 +69,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="125dp"
-                    android:textStyle="bold"
+                    android:text="Email"
                     android:textSize="16sp"
-                    android:text="Email"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtIsiEmail"
@@ -86,8 +79,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="150dp"
-                    android:textSize="16sp"
-                    android:text="muliadhamma@gmail.com"/>
+                    android:text="muliadhamma@gmail.com"
+                    android:textSize="16sp" />
 
             </androidx.cardview.widget.CardView>
 
@@ -96,3 +89,195 @@
     </LinearLayout>
 
 </RelativeLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="#eee"-->
+    <!--    android:orientation="vertical">-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:background="#fff"-->
+    <!--        android:paddingStart="10dp"-->
+    <!--        android:paddingEnd="10dp">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_centerInParent="true"-->
+    <!--            android:text="My Profile"-->
+    <!--            android:textSize="20sp"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--    </RelativeLayout>-->
+
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:scrollbars="none">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:background="#fff"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:padding="10dp">-->
+
+    <!--                <ImageView-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="50dp" />-->
+
+    <!--                <LinearLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginStart="10dp"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Mulia Dhamma"-->
+    <!--                        android:textSize="18sp"-->
+    <!--                        android:textStyle="bold" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="2019" />-->
+    <!--                </LinearLayout>-->
+
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:background="#fff"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+
+    <!--                <View-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="1dp"-->
+    <!--                    android:layout_marginStart="50dp"-->
+    <!--                    android:background="@color/colorPrimaryDark" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+
+    <!--                <View-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="1dp"-->
+    <!--                    android:layout_marginStart="50dp"-->
+    <!--                    android:background="@color/colorPrimaryDark" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:background="#fff"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center_horizontal"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                android:background="#fff"-->
+    <!--                android:orientation="vertical">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
+    <!--                    android:drawablePadding="10dp"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:padding="15dp"-->
+    <!--                    android:text="Personal Detail" />-->
+    <!--            </LinearLayout>-->
+
+    <!--        </LinearLayout>-->
+
+    <!--    </ScrollView>-->
+
+    <!--</LinearLayout>-->
