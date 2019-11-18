@@ -67,9 +67,9 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
     public void onBindViewHolder(@NonNull ClassInfoViewHolder holder, int position) {
         ClassInfo currentItem = listClassInfo.get(position);
 
-        holder.txtClassType.setText(currentItem.getType());
-        holder.txtClassName.setText(currentItem.getName());
-        holder.txtClassSchedule.setText(currentItem.getSchedule());
+        holder.txtClassType.setText(currentItem.type);
+        holder.txtClassName.setText(currentItem.fullname);
+        holder.txtClassSchedule.setText(currentItem.schedule);
     }
 
     @Override

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -22,6 +23,8 @@ import com.aldricklevina.hadir.R;
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
+
+    private LinearLayout layoutMon_home, layoutTue_home, layoutWed_home, layoutThu_home, layoutFri_home;
 
     private ArrayList<ClassInfo> listClassInfo;
 
@@ -50,7 +53,14 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        layoutMon_home = view.findViewById(R.id.layoutMon_home);
+        layoutTue_home = view.findViewById(R.id.layoutTue_home);
+        layoutWed_home = view.findViewById(R.id.layoutWed_home);
+        layoutThu_home = view.findViewById(R.id.layoutThu_home);
+        layoutFri_home = view.findViewById(R.id.layoutFri_home);
+
         recViewClassInfo = view.findViewById(R.id.recViewClassInfo);
+
         recViewClassInfoLayoutManager = new LinearLayoutManager(getActivity());
 
         listClassInfo = new ArrayList<>();
@@ -73,7 +83,7 @@ public class HomeFragment extends Fragment {
         recViewClassInfoAdapter.setOnItemClickListener(new ClassInfoAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
-                String tipe = listClassInfo.get(position).getType();
+                String tipe = listClassInfo.get(position).type;
 
                 if (tipe.equals("Math")) {
                     Intent i = new Intent(getActivity(), ClassDetails.class);
@@ -81,5 +91,53 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+        layoutMon_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshCalendar();
+                layoutMon_home.setBackgroundResource(R.drawable.bg_lightblue);
+            }
+        });
+
+        layoutTue_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshCalendar();
+                layoutTue_home.setBackgroundResource(R.drawable.bg_lightblue);
+            }
+        });
+
+        layoutWed_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshCalendar();
+                layoutWed_home.setBackgroundResource(R.drawable.bg_lightblue);
+            }
+        });
+
+        layoutThu_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshCalendar();
+                layoutThu_home.setBackgroundResource(R.drawable.bg_lightblue);
+            }
+        });
+
+        layoutFri_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshCalendar();
+                layoutFri_home.setBackgroundResource(R.drawable.bg_lightblue);
+            }
+        });
+    }
+
+    private void refreshCalendar() {
+        layoutMon_home.setBackgroundResource(R.drawable.bg_white_stroke);
+        layoutTue_home.setBackgroundResource(R.drawable.bg_white_stroke);
+        layoutWed_home.setBackgroundResource(R.drawable.bg_white_stroke);
+        layoutThu_home.setBackgroundResource(R.drawable.bg_white_stroke);
+        layoutFri_home.setBackgroundResource(R.drawable.bg_white_stroke);
     }
 }

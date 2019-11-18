@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.aldricklevina.hadir.Model.Student;
 import com.aldricklevina.hadir.Model.StudentAdapter;
@@ -16,15 +18,17 @@ public class ClassDetails extends AppCompatActivity {
     private RecyclerView recViewStudent;
     private RecyclerView.LayoutManager recViewStudentLayoutManager;
     private StudentAdapter recViewStudentAdapter;
-
     private ArrayList<Student> listStudent;
+    private ImageView imgBackClassDet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_details);
 
+        imgBackClassDet = findViewById(R.id.imgBack_classDet);
         recViewStudent = findViewById(R.id.recViewStudentClass);
+
         recViewStudentLayoutManager = new LinearLayoutManager(this);
 
         listStudent = new ArrayList<>();
@@ -45,6 +49,13 @@ public class ClassDetails extends AppCompatActivity {
             public void OnItemClick(int position) {
                 BottomSheet bottomSheet = new BottomSheet();
                 bottomSheet.show(getSupportFragmentManager(), "info");
+            }
+        });
+
+        imgBackClassDet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
