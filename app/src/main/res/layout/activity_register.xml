@@ -4,31 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    tools:context=".Login">
+    tools:context=".Register">
+
+    <ImageView
+        android:id="@+id/imgBack_regis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/ic_arrow_back_black_24dp" />
 
     <TextView
-        android:id="@+id/txtLogin"
+        android:id="@+id/txtRegis_regis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
-        android:text="Login"
+        android:text="Register"
         android:textColor="@color/colorBlack"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <LinearLayout
-        android:id="@+id/layoutInputData"
+        android:id="@+id/layoutInputData_regis"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/txtLogin"
+        android:layout_below="@id/txtRegis_regis"
         android:layout_marginTop="25dp"
         android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,52 +40,60 @@
             android:textColor="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/editTextEmail_login"
+            android:id="@+id/editTextEmail_regis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:textColor="@color/colorBlack" />
+            android:textColor="@color/colorBlack"
+            android:inputType="textEmailAddress"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:text="Name"
+            android:textColor="@color/colorBlack" />
+
+        <EditText
+            android:id="@+id/editTextName_regis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Password"
             android:textColor="@color/colorBlack" />
 
         <EditText
-            android:id="@+id/editTextPass_login"
+            android:id="@+id/editTextPass_regis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColor="@color/colorBlack" />
-
-        <Button
-            android:id="@+id/btnLogin_login"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/bg_lightblue"
-            android:text="LOGIN" />
+            android:textColor="@color/colorBlack"
+            android:inputType="textPassword"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Don't have account yet ?"
-            android:textSize="15sp" />
+            android:layout_marginTop="10dp"
+            android:text="Re-Type Password"
+            android:textColor="@color/colorBlack" />
 
-        <Button
-            android:id="@+id/btnRegis_login"
+        <EditText
+            android:id="@+id/editTextRePass_regis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_white_stroke"
+            android:inputType="textPassword"
+            android:textColor="@color/colorBlack" />
+
+        <Button
+            android:id="@+id/btnRegis_regis"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_lightblue"
             android:text="Register" />
 
     </LinearLayout>

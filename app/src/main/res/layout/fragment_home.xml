@@ -60,6 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mulia Dhamma"
+                        android:textColor="@color/colorBlack"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -75,6 +76,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Informatics"
+                        android:textColor="@color/colorBlack"
                         android:textSize="15sp" />
 
                 </LinearLayout>
@@ -87,7 +89,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:text="Schedule"
-                android:textSize="20sp" />
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -96,19 +100,21 @@
 
                 <ImageView
                     android:id="@+id/imgBackSchedule"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
 
                 <ImageView
                     android:id="@+id/imgNextSchedule"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_arrow_forward_black_24dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
                     android:text="1 - 4 January"
                     android:textSize="15sp" />
             </RelativeLayout>
@@ -121,9 +127,12 @@
                 android:weightSum="5">
 
                 <LinearLayout
+                    android:id="@+id/layoutMon_home"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_white_stroke"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -131,7 +140,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Sun" />
+                        android:text="Mon" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -144,9 +153,12 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutTue_home"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_white_stroke"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -154,22 +166,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Sun" />
+                        android:text="Tue" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="1"
+                        android:text="2"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutWed_home"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_white_stroke"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -177,22 +192,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Sun" />
+                        android:text="Wed" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="1"
+                        android:text="3"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutThu_home"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_white_stroke"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -200,22 +218,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Sun" />
+                        android:text="Thu" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="1"
+                        android:text="4"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutFri_home"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_white_stroke"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -223,14 +244,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Sun" />
+                        android:text="Fri" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="1"
+                        android:text="5"
                         android:textStyle="bold" />
 
                 </LinearLayout>

@@ -68,7 +68,7 @@ public class MyClassFragment extends Fragment {
         recViewMyClassAdapter.setOnItemClickListener(new ClassInfoAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
-                String tipe = listClass.get(position).getType();
+                String tipe = listClass.get(position).type;
 
                 if (tipe.equals("Math")) {
                     Intent i = new Intent(getActivity(), ClassDetails.class);

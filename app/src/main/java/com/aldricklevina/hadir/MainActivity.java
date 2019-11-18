@@ -1,8 +1,10 @@
 package com.aldricklevina.hadir;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.aldricklevina.hadir.Model.Account;
 import com.aldricklevina.hadir.ui.home.HomeFragment;
 import com.aldricklevina.hadir.ui.myclass.MyClassFragment;
 import com.aldricklevina.hadir.ui.profile.ProfileFragment;
@@ -11,44 +13,44 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Intent intent;
+    private Boolean isLogin = false;
+    private ArrayList<Account> listAcc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        intent = getIntent();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+        if (intent != null) {
+            isLogin = intent.getBooleanExtra("isLogin", false);
+            listAcc = intent.getParcelableArrayListExtra("listAcc");
+        }
 
-        navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                Fragment selectedFragment = null;
+        if (listAcc == null) {
+            listAcc = new ArrayList<>();
+            listAcc.add(new Account("admin", "ADMIN", "admin"));
+            listAcc.add(new Account("levina@gmail.com", "Levina Khomulia", "1234"));
+            listAcc.add(new Account("aldrick@gmail.com", "Aldrick Handinata", "1234"));
+        }
 
-                switch (menuItem.getItemId()) {
-                    case R.id.navigation_home:
-                        selectedFragment = new HomeFragment();
-                        break;
-                    case R.id.navigation_myclass:
-                        selectedFragment = new MyClassFragment();
-                        break;
-                    case R.id.navigation_profile:
-                        selectedFragment = new ProfileFragment();
-                        break;
-                }
-
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
-
-                return true;
-            }
-        });
+        if (isLogin) {
+            intent = new Intent(MainActivity.this, Home.class);
+            intent.putParcelableArrayListExtra("listAcc", listAcc);
+            startActivity(intent);
+            finish();
+        } else {
+            intent = new Intent(MainActivity.this, Login.class);
+            intent.putParcelableArrayListExtra("listAcc", listAcc);
+            startActivity(intent);
+            finish();
+        }
     }
-
 }

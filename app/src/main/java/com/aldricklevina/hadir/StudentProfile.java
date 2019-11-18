@@ -7,12 +7,12 @@ import android.widget.ImageView;
 
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
-public class ProgressBar extends AppCompatActivity {
+public class StudentProfile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_progress_bar);
+        setContentView(R.layout.activity_student_profile);
 
         CircularProgressBar circularProgressBar = (CircularProgressBar) findViewById(R.id.progressBarBiru);
 //        circularProgressBar.setColor(ContextCompat.getColor(this, R.color.progressBarColor));
