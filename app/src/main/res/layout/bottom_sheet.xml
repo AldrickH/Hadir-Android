@@ -147,8 +147,8 @@
         android:background="@drawable/bg_white_stroke"
         android:gravity="top"
         android:hint="Enter a comment"
-        android:padding="10dp"
-        android:inputType="text">
+        android:inputType="text"
+        android:padding="10dp" />
 
     <Button
         android:layout_width="match_parent"
