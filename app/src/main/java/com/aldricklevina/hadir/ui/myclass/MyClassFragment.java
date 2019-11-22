@@ -49,14 +49,14 @@ public class MyClassFragment extends Fragment {
         recViewMyClassLayoutManager = new LinearLayoutManager(getActivity());
 
         listClass = new ArrayList<>();
-        listClass.add(new ClassInfo("Math", "Kalkulus", "12.00 AM"));
-        listClass.add(new ClassInfo("Math", "DATA", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
-        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM"));
+//        listClass.add(new ClassInfo("Math", "Kalkulus", "12.00 AM", "12.00 AM"));
+//        listClass.add(new ClassInfo("Math", "DATA", "11.00 AM", "12.00 AM"));
+//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
+//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
+//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
+//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
+//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
+//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
 
         recViewMyClassAdapter = new ClassInfoAdapter(listClass);
 
@@ -68,7 +68,7 @@ public class MyClassFragment extends Fragment {
         recViewMyClassAdapter.setOnItemClickListener(new ClassInfoAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
-                String tipe = listClass.get(position).type;
+                String tipe = listClass.get(position).getDate();
 
                 if (tipe.equals("Math")) {
                     Intent i = new Intent(getActivity(), ClassDetails.class);

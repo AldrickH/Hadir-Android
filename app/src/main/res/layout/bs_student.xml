@@ -25,16 +25,18 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtStudentName_bs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ali Mohammed"
+                android:text="{ Student Name }"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtStudentId_bs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="03082170000" />
+                android:text="{ Student Id }" />
 
         </LinearLayout>
 
@@ -151,6 +153,7 @@
         android:padding="10dp" />
 
     <Button
+        android:id="@+id/btnSubmit_bs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

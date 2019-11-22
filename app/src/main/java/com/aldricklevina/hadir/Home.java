@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.aldricklevina.hadir.Model.Account;
+import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.ui.home.HomeFragment;
 import com.aldricklevina.hadir.ui.myclass.MyClassFragment;
 import com.aldricklevina.hadir.ui.profile.ProfileFragment;
@@ -20,14 +21,12 @@ public class Home extends AppCompatActivity {
 
     private BottomNavigationView navView;
     private Fragment selectedFrag;
-    private Intent intent;
+    private App app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        intent = getIntent();
 
         navView = findViewById(R.id.nav_view);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();

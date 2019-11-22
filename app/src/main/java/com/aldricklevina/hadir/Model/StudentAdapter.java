@@ -65,11 +65,15 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student currentItem = listStudent.get(position);
 
-        holder.txtStudentName.setText(currentItem.getName());
+        holder.txtStudentName.setText(currentItem.getFullName());
     }
 
     @Override
     public int getItemCount() {
         return listStudent.size();
+    }
+
+    public Student getItem(int position) {
+        return listStudent.get(position);
     }
 }

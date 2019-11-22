@@ -46,7 +46,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtSubject"
+                    android:id="@+id/txtSubject_classDet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="{ Subject }"
@@ -54,7 +54,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtSchedule"
+                    android:id="@+id/txtTime_classDet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"

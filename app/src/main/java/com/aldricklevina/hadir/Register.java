@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.aldricklevina.hadir.Model.Account;
+import com.aldricklevina.hadir.Model.App;
 
 import java.util.ArrayList;
 
@@ -20,15 +21,15 @@ public class Register extends AppCompatActivity {
     private Button btnRegis;
     private Intent intent;
     private String email, name, pass, repass;
-    private ArrayList<Account> listAcc;
+    private App app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        if (intent != null) {
-            listAcc = intent.getParcelableArrayListExtra("listAcc");
+        if (app == null) {
+            app = (App) this.getApplication();
         }
 
         imgBack = findViewById(R.id.imgBack_regis);
@@ -55,11 +56,10 @@ public class Register extends AppCompatActivity {
 
                 if (!email.equals("") && !name.equals("") && !pass.equals("") && !repass.equals("")) {
                     if (pass.equals(repass)) {
-                        listAcc.add(new Account(email, name, pass));
+                        app.listAcc.add(new Account(email, name, pass));
 
                         Intent intent = new Intent(Register.this, Login.class);
                         startActivity(intent);
-                        intent.putParcelableArrayListExtra("listAcc", listAcc);
                         finish();
                     } else {
                         editTextRePass.setError("Password not Match");

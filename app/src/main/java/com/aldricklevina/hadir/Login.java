@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.aldricklevina.hadir.Model.Account;
+import com.aldricklevina.hadir.Model.App;
 
 import java.util.ArrayList;
 
@@ -17,18 +18,16 @@ public class Login extends AppCompatActivity {
     private Button btnLogin, btnRegis;
     private EditText editTextPass, editTextEmail;
     private Intent intent;
-    private ArrayList<Account> listAcc;
-    private Boolean loginSuccess = false;
+
+    private App app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        intent = getIntent();
-
-        if (intent != null) {
-            listAcc = intent.getParcelableArrayListExtra("listAcc");
+        if (app == null) {
+            app = (App) this.getApplication();
         }
 
         btnLogin = findViewById(R.id.btnLogin_login);
@@ -39,16 +38,16 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (Account acc : listAcc) {
+                for (Account acc : app.listAcc) {
                     if (editTextEmail.getText().toString().equals(acc.email) && editTextPass.getText().toString().equals(acc.password)) {
-                        loginSuccess = true;
+                        app.isLogin = true;
+                        app.acc = acc;
                         break;
                     }
                 }
 
-                if (loginSuccess) {
+                if (app.isLogin) {
                     intent = new Intent(Login.this, MainActivity.class);
-                    intent.putExtra("isLogin", true);
                     startActivity(intent);
                     finish();
                 } else {
@@ -62,7 +61,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 intent = new Intent(Login.this, Register.class);
-                intent.putParcelableArrayListExtra("listAcc", listAcc);
                 startActivity(intent);
             }
         });
