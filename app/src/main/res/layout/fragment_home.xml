@@ -56,10 +56,10 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/txtProfileName"
+                        android:id="@+id/txtName_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mulia Dhamma"
+                        android:text="{ NAME }"
                         android:textColor="@color/colorBlack"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -68,14 +68,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:text="Major"
+                        android:text="Email"
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/txtProfileMajor"
+                        android:id="@+id/txtEmail_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Informatics"
+                        android:text="{ EMAIL }"
                         android:textColor="@color/colorBlack"
                         android:textSize="15sp" />
 
@@ -99,24 +99,25 @@
                 android:padding="10dp">
 
                 <ImageView
-                    android:id="@+id/imgBackSchedule"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:id="@+id/imgBackSchedule_home"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:src="@drawable/ic_arrow_back_black_24dp" />
 
                 <ImageView
-                    android:id="@+id/imgNextSchedule"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:id="@+id/imgNextSchedule_home"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/ic_arrow_forward_black_24dp" />
 
                 <TextView
+                    android:id="@+id/txtSchedule_home"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="1 - 4 January"
-                    android:textSize="15sp" />
+                    android:textSize="18sp" />
             </RelativeLayout>
 
             <LinearLayout
@@ -124,134 +125,202 @@
                 android:layout_height="wrap_content"
                 android:elevation="10dp"
                 android:orientation="horizontal"
-                android:weightSum="5">
+                android:weightSum="7">
 
                 <LinearLayout
-                    android:id="@+id/layoutMon_home"
-                    android:layout_width="50dp"
+                    android:id="@+id/layoutSun_home"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Mon" />
+                        android:text="S"
+                        android:textColor="@color/colorRed" />
 
                     <TextView
+                        android:id="@+id/txtSunDate_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="1"
+                        android:text="@string/default_date"
+                        android:textColor="@color/colorRed"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutMon_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_blue_stroke"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="M" />
+
+                    <TextView
+                        android:id="@+id/txtMonDate_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/default_date"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layoutTue_home"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Tue" />
+                        android:text="T" />
 
                     <TextView
+                        android:id="@+id/txtTueDate_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="2"
+                        android:text="@string/default_date"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layoutWed_home"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Wed" />
+                        android:text="W" />
 
                     <TextView
+                        android:id="@+id/txtWedDate_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="3"
+                        android:text="@string/default_date"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layoutThu_home"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Thu" />
+                        android:text="T" />
 
                     <TextView
+                        android:id="@+id/txtThuDate_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="4"
+                        android:text="@string/default_date"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layoutFri_home"
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Fri" />
+                        android:text="F" />
 
                     <TextView
+                        android:id="@+id/txtFriDate_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
-                        android:text="5"
+                        android:text="@string/default_date"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutSat_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_blue_stroke"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="S" />
+
+                    <TextView
+                        android:id="@+id/txtSatDate_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/default_date"
                         android:textStyle="bold" />
 
                 </LinearLayout>

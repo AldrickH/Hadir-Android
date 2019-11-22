@@ -28,7 +28,8 @@ public class StudentProfile extends AppCompatActivity {
         ImageView imageStudent = findViewById(R.id.fotoStudent);
         imageStudent.setImageResource(R.drawable.foto_student);
 
-        imgBackStudentProfile = findViewById(R.id.imgBack_studentProfile);
+        imgBackStudentProfile = findViewById(R.id.imgBack_studentProf);
+
         imgBackStudentProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

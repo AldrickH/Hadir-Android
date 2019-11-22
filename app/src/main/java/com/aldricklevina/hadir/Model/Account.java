@@ -1,9 +1,8 @@
 package com.aldricklevina.hadir.Model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.app.Application;
 
-public class Account implements Parcelable {
+public class Account extends Application {
     public String email, fullname, password;
 
     public Account (String _email, String _fullname, String _password) {
@@ -12,33 +11,16 @@ public class Account implements Parcelable {
         this.password = _password;
     }
 
-    public Account(Parcel in) {
-        this.email = in.readString();
-        this.fullname = in.readString();
-        this.password = in.readString();
+
+    public String getEmail() {
+        return email;
     }
 
-    public static final Creator<Account> CREATOR = new Creator<Account>() {
-        @Override
-        public Account createFromParcel(Parcel in) {
-            return new Account(in);
-        }
-
-        @Override
-        public Account[] newArray(int size) {
-            return new Account[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
+    public String getPassword() {
+        return password;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.email);
-        dest.writeString(this.fullname);
-        dest.writeString(this.password);
+    public String getFullname() {
+        return fullname;
     }
 }

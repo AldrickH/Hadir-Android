@@ -4,4 +4,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">My Class</string>
     <string name="title_notifications">Profile</string>
+
+    <string name="default_date">{ 0 }</string>
 </resources>

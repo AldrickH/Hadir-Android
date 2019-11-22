@@ -25,16 +25,18 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txtStudentName_bs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ali Mohammed"
+                android:text="{ Student Name }"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txtStudentId_bs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="03082170000" />
+                android:text="{ Student Id }" />
 
         </LinearLayout>
 
@@ -69,47 +71,74 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/radioPresent"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Present">
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Present" />
 
-        </RadioButton>
+    </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radioLate"
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Late">
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Late" />
 
-        </RadioButton>
+    </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radioAbsent"
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Absent">
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Absent" />
 
-        </RadioButton>
+    </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radioExcuse"
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Excuse">
-
-        </RadioButton>
-
-    </RadioGroup>
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:text="Permission" />
 
     </LinearLayout>
 
@@ -124,13 +153,11 @@
         android:padding="10dp" />
 
     <Button
-        android:id="@+id/btnSubmitPresent"
+        android:id="@+id/btnSubmit_bs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/bg_blue"
         android:text="Submit" />
-
-
 
 </LinearLayout>

@@ -46,7 +46,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtSubject"
+                    android:id="@+id/txtSubject_classDet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="{ Subject }"
@@ -54,8 +54,8 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtTime"
-                    android:layout_below="@id/txtSubject"
+                    android:id="@+id/txtTime_classDet"
+                    android:layout_below="@id/txtSubject_classDet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -63,8 +63,8 @@
 
                 <TextView
                     android:id="@+id/txtDate"
-                    android:layout_toRightOf="@id/txtTime"
-                    android:layout_below="@id/txtSubject"
+                    android:layout_toRightOf="@id/txtTime_classDet"
+                    android:layout_below="@id/txtSubject_classDet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -90,10 +90,10 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/txtPresent"
+                        android:id="@+id/txtPresent_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView
@@ -114,10 +114,10 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/txtLate"
+                        android:id="@+id/txtLate_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView
@@ -138,10 +138,10 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/txtAbsent"
+                        android:id="@+id/txtAbsent_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView
@@ -162,10 +162,10 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/txtExcuse"
+                        android:id="@+id/txtExcuse_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView

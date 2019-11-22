@@ -5,37 +5,49 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.Model.Student;
 import com.aldricklevina.hadir.Model.StudentAdapter;
 
 import java.util.ArrayList;
 
-public class ClassDetails extends AppCompatActivity {
+public class ClassDetails extends AppCompatActivity implements BS_Student.ItemClickListener {
 
     private RecyclerView recViewStudent;
     private RecyclerView.LayoutManager recViewStudentLayoutManager;
     private StudentAdapter recViewStudentAdapter;
-    private ArrayList<Student> listStudent;
+
     private ImageView imgBackClassDet;
+    private TextView txtSubject, txtTime;
+
+    private ArrayList<Student> listStudent;
+
+    private App app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_details);
 
+        if (app == null) app = (App) this.getApplication();
+
+        listStudent = getClassStudent(app.classInfo.getId());
+
         imgBackClassDet = findViewById(R.id.imgBack_classDet);
+
+        txtSubject = findViewById(R.id.txtSubject_classDet);
+        txtTime = findViewById(R.id.txtTime_classDet);
+
         recViewStudent = findViewById(R.id.recViewStudentClass);
 
+        txtSubject.setText(app.classInfo.getClassName());
+
         recViewStudentLayoutManager = new LinearLayoutManager(this);
-
-        listStudent = new ArrayList<>();
-
-        listStudent.add(new Student("Aldrick Handinata", "03082170001"));
-        listStudent.add(new Student("Aldrick Handinata", "03082170002"));
-        listStudent.add(new Student("Aldrick Handinata", "03082170003"));
-
         recViewStudentAdapter = new StudentAdapter(listStudent);
 
         recViewStudent.setLayoutManager(recViewStudentLayoutManager);
@@ -46,8 +58,8 @@ public class ClassDetails extends AppCompatActivity {
         recViewStudentAdapter.setOnItemClickListener(new StudentAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
-                BottomSheet bottomSheet = new BottomSheet();
-                bottomSheet.show(getSupportFragmentManager(), "info");
+                BS_Student bs_student = new BS_Student(recViewStudentAdapter.getItem(position));
+                bs_student.show(getSupportFragmentManager().beginTransaction(), bs_student.getTag());
             }
         });
 
@@ -57,5 +69,21 @@ public class ClassDetails extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public ArrayList<Student> getClassStudent(String _classId) {
+        ArrayList<Student> result = new ArrayList<>();
+
+        for (Student student : app.listStudent) {
+            if (student.classId.equals(_classId)) {
+                result.add(student);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public void onItemClick(String item) {
+        Log.i("berhasil", "onItemClick: berhasil" + item);
     }
 }
