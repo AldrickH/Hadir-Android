@@ -24,11 +24,13 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public class StudentViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtStudentName;
+        TextView txtStudentNim;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtStudentName = itemView.findViewById(R.id.txtStudentName);
+            txtStudentNim = itemView.findViewById(R.id.txtStudentNim);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -66,6 +68,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         Student currentItem = listStudent.get(position);
 
         holder.txtStudentName.setText(currentItem.getName());
+        holder.txtStudentNim.setText(currentItem.getNim());
     }
 
     @Override

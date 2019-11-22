@@ -30,7 +30,7 @@
                     android:id="@+id/txtClassType"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_darkblue"
+                    android:background="@drawable/bg_blue_trans"
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
                     android:text="{ Type }"

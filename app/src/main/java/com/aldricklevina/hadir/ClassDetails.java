@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-
 import com.aldricklevina.hadir.Model.Student;
 import com.aldricklevina.hadir.Model.StudentAdapter;
 
@@ -33,9 +32,9 @@ public class ClassDetails extends AppCompatActivity {
 
         listStudent = new ArrayList<>();
 
-        listStudent.add(new Student("Aldrick Handinata"));
-        listStudent.add(new Student("Aldrick Handinata"));
-        listStudent.add(new Student("Aldrick Handinata"));
+        listStudent.add(new Student("Aldrick Handinata", "03082170001"));
+        listStudent.add(new Student("Aldrick Handinata", "03082170002"));
+        listStudent.add(new Student("Aldrick Handinata", "03082170003"));
 
         recViewStudentAdapter = new StudentAdapter(listStudent);
 
