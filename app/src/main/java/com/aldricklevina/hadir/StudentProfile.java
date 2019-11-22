@@ -3,11 +3,14 @@ package com.aldricklevina.hadir;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 public class StudentProfile extends AppCompatActivity {
+
+    private ImageView imgBackStudentProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,14 @@ public class StudentProfile extends AppCompatActivity {
 
         ImageView imageStudent = findViewById(R.id.fotoStudent);
         imageStudent.setImageResource(R.drawable.foto_student);
+
+        imgBackStudentProfile = findViewById(R.id.imgBack_studentProfile);
+        imgBackStudentProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }

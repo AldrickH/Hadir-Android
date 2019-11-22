@@ -69,74 +69,47 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <TextView
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/radioPresent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:text="Present" />
+            android:text="Present">
 
-    </LinearLayout>
+        </RadioButton>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <TextView
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/radioLate"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:text="Late" />
+            android:text="Late">
 
-    </LinearLayout>
+        </RadioButton>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <TextView
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/radioAbsent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:text="Absent" />
+            android:text="Absent">
 
-    </LinearLayout>
+        </RadioButton>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <TextView
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/radioExcuse"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:text="Permission" />
+            android:text="Excuse">
+
+        </RadioButton>
+
+    </RadioGroup>
 
     </LinearLayout>
 
@@ -144,16 +117,20 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/bg_white_stroke"
+        android:background="@drawable/bg_blue_stroke"
         android:gravity="top"
         android:hint="Enter a comment"
         android:inputType="text"
         android:padding="10dp" />
 
     <Button
+        android:id="@+id/btnSubmitPresent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:background="@drawable/bg_blue"
         android:text="Submit" />
+
+
 
 </LinearLayout>

@@ -27,6 +27,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/txtStudentNim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="{ NIM }" />
