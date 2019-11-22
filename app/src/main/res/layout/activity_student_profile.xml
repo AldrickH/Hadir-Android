@@ -5,6 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@color/colorBlueTrans">
+
+        <ImageView
+            android:id="@+id/imgBack_studentProf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="Student's Profile"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/progressBarBiru"
         android:layout_width="150dp"
@@ -12,7 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="100dp"
         android:layout_marginTop="100dp"
-        app:background_progressbar_color="#87CEFA"
+        app:background_progressbar_color="#52bcf7"
         app:background_progressbar_width="10dp"
         app:progressbar_color="#F44336"
         app:progressbar_width="10dp" />

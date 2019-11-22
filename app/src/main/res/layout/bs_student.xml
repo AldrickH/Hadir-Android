@@ -146,7 +146,7 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/bg_white_stroke"
+        android:background="@drawable/bg_blue_stroke"
         android:gravity="top"
         android:hint="Enter a comment"
         android:inputType="text"
@@ -157,6 +157,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:background="@drawable/bg_blue"
         android:text="Submit" />
 
 </LinearLayout>

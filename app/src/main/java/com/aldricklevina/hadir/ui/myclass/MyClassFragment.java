@@ -15,11 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldricklevina.hadir.ClassDetails;
+import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.Model.ClassInfo;
 import com.aldricklevina.hadir.Model.ClassInfoAdapter;
 import com.aldricklevina.hadir.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MyClassFragment extends Fragment {
 
@@ -27,6 +29,8 @@ public class MyClassFragment extends Fragment {
     private RecyclerView recViewMyClass;
     private ClassInfoAdapter recViewMyClassAdapter;
     private RecyclerView.LayoutManager recViewMyClassLayoutManager;
+
+    private App app;
 
     private MyClassViewModel myClassViewModel;
 
@@ -42,22 +46,21 @@ public class MyClassFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (app == null) app = (App) Objects.requireNonNull(this.getActivity()).getApplication();
+
+        listClass = getClassByEmail(app.acc.getEmail());
+    }
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         recViewMyClass = view.findViewById(R.id.recViewMyClass);
+
         recViewMyClassLayoutManager = new LinearLayoutManager(getActivity());
-
-        listClass = new ArrayList<>();
-//        listClass.add(new ClassInfo("Math", "Kalkulus", "12.00 AM", "12.00 AM"));
-//        listClass.add(new ClassInfo("Math", "DATA", "11.00 AM", "12.00 AM"));
-//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
-//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
-//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
-//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
-//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
-//        listClass.add(new ClassInfo("Math", "Nanti Baru isi", "11.00 AM", "12.00 AM"));
-
         recViewMyClassAdapter = new ClassInfoAdapter(listClass);
 
         recViewMyClass.setLayoutManager(recViewMyClassLayoutManager);
@@ -68,13 +71,22 @@ public class MyClassFragment extends Fragment {
         recViewMyClassAdapter.setOnItemClickListener(new ClassInfoAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
-                String tipe = listClass.get(position).getDate();
-
-                if (tipe.equals("Math")) {
-                    Intent i = new Intent(getActivity(), ClassDetails.class);
-                    startActivity(i);
-                }
+                app.classInfo = recViewMyClassAdapter.getItem(position);
+                Intent intent = new Intent(getActivity(), ClassDetails.class);
+                startActivity(intent);
             }
         });
+    }
+
+    public ArrayList<ClassInfo> getClassByEmail(String _username) {
+        ArrayList<ClassInfo> result = new ArrayList<>();
+
+        for (ClassInfo classInfo : app.listClassInfo) {
+            if (classInfo.getLecturer().equals(_username)) {
+                result.add(classInfo);
+            }
+        }
+
+        return result;
     }
 }

@@ -40,7 +40,7 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -55,11 +55,21 @@
 
                 <TextView
                     android:id="@+id/txtTime_classDet"
+                    android:layout_below="@id/txtSubject_classDet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="{ Time } | { Day and Date }" />
-            </LinearLayout>
+                    android:text="{ Time } "/>
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_toRightOf="@id/txtTime_classDet"
+                    android:layout_below="@id/txtSubject_classDet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="{ Day and Date }" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,15 +84,16 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/txtPresent_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView
@@ -97,15 +108,16 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/txtLate_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView
@@ -120,15 +132,16 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/txtAbsent_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView
@@ -143,15 +156,16 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_white_stroke"
+                    android:background="@drawable/bg_blue_stroke"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:padding="10dp">
 
                     <TextView
+                        android:id="@+id/txtExcuse_classDet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15"
+                        android:text="{ 0 }"
                         android:textStyle="bold" />
 
                     <TextView
