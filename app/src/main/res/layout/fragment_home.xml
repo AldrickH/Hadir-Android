@@ -15,12 +15,9 @@
             android:layout_height="50dp" />
 
         <ImageView
-            android:id="@+id/imgSearch_home"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:padding="10dp"
-            android:src="@drawable/ic_search_black_24dp" />
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

@@ -19,27 +19,30 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldricklevina.hadir.ClassDetails;
-import com.aldricklevina.hadir.Explore;
 import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.Model.ClassInfo;
 import com.aldricklevina.hadir.Model.ClassInfoAdapter;
 import com.aldricklevina.hadir.R;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
     private LinearLayout layoutSun, layoutMon, layoutTue, layoutWed, layoutThu, layoutFri, layoutSat;
-    private ImageView imgSearch, imgBackSchedule, imgNextSchedule;
+    private ImageView imgBackSchedule, imgNextSchedule;
     private TextView txtSunDate, txtMonDate, txtTueDate, txtWedDate, txtThuDate, txtFriDate, txtSatDate;
     private TextView txtName, txtEmail, txtSchedule;
+    private boolean layoutSunClicked, layoutMonClicked, layoutTueClicked, layoutWedClicked, layoutThuClicked, layoutFriClicked, layoutSatClicked;
 
     private SimpleDateFormat dateFormat;
 
-    private boolean layoutSunClicked, layoutMonClicked, layoutTueClicked, layoutWedClicked, layoutThuClicked, layoutFriClicked, layoutSatClicked;
+    private App app;
+
     private String todayDay;
     private ArrayList<ClassInfo> listClassInfo;
 
@@ -49,13 +52,7 @@ public class HomeFragment extends Fragment {
     private ClassInfoAdapter recViewClassInfoAdapter;
     private RecyclerView.LayoutManager recViewClassInfoLayoutManager;
 
-    private App app;
-
     private HomeViewModel homeViewModel;
-
-    public HomeFragment(App _app) {
-        this.app = _app;
-    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
@@ -71,7 +68,12 @@ public class HomeFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (app == null) app = (App) Objects.requireNonNull(this.getActivity()).getApplication();
+
         listClassInfo = new ArrayList<>();
+
+        // BUG ntah knapa
+//        listClassInfo = app.listClassInfo;
 
         dateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
         calendar = Calendar.getInstance();
@@ -94,7 +96,6 @@ public class HomeFragment extends Fragment {
         txtFriDate = view.findViewById(R.id.txtFriDate_home);
         txtSatDate = view.findViewById(R.id.txtSatDate_home);
 
-        imgSearch = view.findViewById(R.id.imgSearch_home);
         imgBackSchedule = view.findViewById(R.id.imgBackSchedule_home);
         imgNextSchedule = view.findViewById(R.id.imgNextSchedule_home);
 
@@ -128,14 +129,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        imgSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), Explore.class);
-                startActivity(intent);
-            }
-        });
-
         imgBackSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -163,7 +156,9 @@ public class HomeFragment extends Fragment {
                 layoutSun.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutSunClicked = true;
 
-                filterClassInfo(layoutSun.getTag().toString());
+                listClassInfo.clear();
+                listClassInfo.addAll(filterListData(layoutSun.getTag().toString()));
+                recViewClassInfoAdapter.notifyDataSetChanged();
 
                 recViewClassInfo.setFocusable(false);
             }
@@ -176,7 +171,9 @@ public class HomeFragment extends Fragment {
                 layoutMon.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutMonClicked = true;
 
-                filterClassInfo(layoutMon.getTag().toString());
+                listClassInfo.clear();
+                listClassInfo.addAll(filterListData(layoutMon.getTag().toString()));
+                recViewClassInfoAdapter.notifyDataSetChanged();
 
                 recViewClassInfo.setFocusable(false);
             }
@@ -189,7 +186,9 @@ public class HomeFragment extends Fragment {
                 layoutTue.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutTueClicked = true;
 
-                filterClassInfo(layoutTue.getTag().toString());
+                listClassInfo.clear();
+                listClassInfo.addAll(filterListData(layoutTue.getTag().toString()));
+                recViewClassInfoAdapter.notifyDataSetChanged();
 
                 recViewClassInfo.setFocusable(false);
             }
@@ -202,7 +201,9 @@ public class HomeFragment extends Fragment {
                 layoutWed.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutWedClicked = true;
 
-                filterClassInfo(layoutWed.getTag().toString());
+                listClassInfo.clear();
+                listClassInfo.addAll(filterListData(layoutWed.getTag().toString()));
+                recViewClassInfoAdapter.notifyDataSetChanged();
 
                 recViewClassInfo.setFocusable(false);
             }
@@ -215,8 +216,9 @@ public class HomeFragment extends Fragment {
                 layoutThu.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutThuClicked = true;
 
-                filterClassInfo(layoutThu.getTag().toString());
-
+                listClassInfo.clear();
+                listClassInfo.addAll(filterListData(layoutThu.getTag().toString()));
+                recViewClassInfoAdapter.notifyDataSetChanged();
                 recViewClassInfo.setFocusable(false);
             }
         });
@@ -228,7 +230,9 @@ public class HomeFragment extends Fragment {
                 layoutFri.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutFriClicked = true;
 
-                filterClassInfo(layoutFri.getTag().toString());
+                listClassInfo.clear();
+                listClassInfo.addAll(filterListData(layoutFri.getTag().toString()));
+                recViewClassInfoAdapter.notifyDataSetChanged();
 
                 recViewClassInfo.setFocusable(false);
             }
@@ -241,7 +245,9 @@ public class HomeFragment extends Fragment {
                 layoutSat.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutSatClicked = true;
 
-                filterClassInfo(layoutSat.getTag().toString());
+                listClassInfo.clear();
+                listClassInfo.addAll(filterListData(layoutSat.getTag().toString()));
+                recViewClassInfoAdapter.notifyDataSetChanged();
 
                 recViewClassInfo.setFocusable(false);
             }
@@ -262,7 +268,7 @@ public class HomeFragment extends Fragment {
         layoutSunClicked = layoutMonClicked = layoutTueClicked = layoutWedClicked = layoutThuClicked = layoutFriClicked = layoutSatClicked = false;
     }
 
-    private void filterClassInfo(String _date) {
+    private ArrayList<ClassInfo> filterListData(String _date) {
         ArrayList<ClassInfo> result = new ArrayList<>();
 
         for (ClassInfo classInfo : app.listClassInfo) {
@@ -270,8 +276,7 @@ public class HomeFragment extends Fragment {
                 result.add(classInfo);
             }
         }
-
-        recViewClassInfoAdapter.filterList(result);
+        return result;
     }
 
     private void lastClicked() {
