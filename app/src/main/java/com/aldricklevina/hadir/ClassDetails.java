@@ -22,7 +22,7 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
     private RecyclerView.LayoutManager recViewStudentLayoutManager;
     private StudentAdapter recViewStudentAdapter;
 
-    private ImageView imgBack;
+    private ImageView imgBackClassDet;
     private TextView txtSubject, txtTime;
 
     private ArrayList<Student> listStudent;
@@ -38,7 +38,7 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
 
         listStudent = getClassStudent(app.classInfo.getId());
 
-        imgBack = findViewById(R.id.imgBack_classDet);
+        imgBackClassDet = findViewById(R.id.imgBack_classDet);
 
         txtSubject = findViewById(R.id.txtSubject_classDet);
         txtTime = findViewById(R.id.txtTime_classDet);
@@ -63,7 +63,7 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
             }
         });
 
-        imgBack.setOnClickListener(new View.OnClickListener() {
+        imgBackClassDet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
