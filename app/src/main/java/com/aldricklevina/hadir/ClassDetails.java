@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +14,7 @@ import com.aldricklevina.hadir.Model.Student;
 import com.aldricklevina.hadir.Model.StudentAdapter;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ClassDetails extends AppCompatActivity implements BS_Student.ItemClickListener {
 
@@ -24,8 +24,12 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
 
     private ImageView imgBackClassDet;
     private TextView txtSubject, txtTime;
+    private TextView txtPresent, txtLate, txtAbsent, txtExcuse;
+
+    private BS_Student bs_student;
 
     private ArrayList<Student> listStudent;
+
 
     private App app;
 
@@ -34,7 +38,9 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_details);
 
-        if (app == null) app = (App) this.getApplication();
+//        if (app == null) app = (App) this.getApplication();
+
+        if (app == null) app = (App) Objects.requireNonNull(getApplication());
 
         listStudent = getClassStudent(app.classInfo.getId());
 
@@ -69,6 +75,14 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
                 finish();
             }
         });
+
+        txtPresent = findViewById(R.id.txtPresent_classDet);
+        txtLate = findViewById(R.id.txtLate_classDet);
+        txtAbsent = findViewById(R.id.txtAbsent_classDet);
+        txtExcuse = findViewById(R.id.txtExcuse_classDet);
+
+//        txtPresent.setText(bs_student.getJlhStatus());
+
     }
 
     public ArrayList<Student> getClassStudent(String _classId) {
@@ -83,7 +97,23 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
     }
 
     @Override
-    public void onItemClick(String item) {
-        Log.i("berhasil", "onItemClick: berhasil" + item);
+    public int onItemClick(Student _student) {
+        for (Student student : app.listStudent) {
+            if (student.id.equals(_student.id)) student = _student;
+            break;
+        }
+
+        recViewStudentAdapter.notifyDataSetChanged();
+
+//        int jlhStudent = app.listStudent.size();
+//        return jlhStudent;
+
+//        return app.student.getStatus();
+
+
+        return 0;
     }
+
+
+
 }

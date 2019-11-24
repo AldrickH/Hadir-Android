@@ -54,22 +54,22 @@
                 app:cardElevation="8dp">
 
                 <TextView
-                    android:id="@+id/txtUsername"
+                    android:id="@+id/txtFullName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="60dp"
-                    android:text="Username"
+                    android:text="Full Name"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtIsiUsername"
+                    android:id="@+id/txtIsiFullName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="85dp"
-                    android:text="Mulia Dhamma"
+                    android:text="{ Full Name }"
                     android:textSize="16sp" />
 
                 <TextView
@@ -88,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="150dp"
-                    android:text="muliadhamma@gmail.com"
+                    android:text="{ Email }"
                     android:textSize="16sp" />
 
             </androidx.cardview.widget.CardView>

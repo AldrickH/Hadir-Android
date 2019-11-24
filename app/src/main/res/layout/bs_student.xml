@@ -71,6 +71,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layoutPresent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -80,6 +81,7 @@
             android:layout_height="50dp" />
 
         <TextView
+            android:id="@+id/txtPresent_bs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -89,6 +91,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layoutLate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -98,6 +101,7 @@
             android:layout_height="50dp" />
 
         <TextView
+            android:id="@+id/txtLate_bs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -107,6 +111,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layoutAbsent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -116,6 +121,7 @@
             android:layout_height="50dp" />
 
         <TextView
+            android:id="@+id/txtAbsent_bs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -125,6 +131,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layoutExcuse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -134,11 +141,12 @@
             android:layout_height="50dp" />
 
         <TextView
+            android:id="@+id/txtExcuse_bs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
-            android:text="Permission" />
+            android:text="Excuse" />
 
     </LinearLayout>
 
