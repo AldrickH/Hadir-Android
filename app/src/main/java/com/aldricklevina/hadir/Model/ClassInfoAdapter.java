@@ -17,10 +17,6 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
     private ArrayList<ClassInfo> listClassInfo;
     private OnItemClickListener clickListener;
 
-    public ClassInfoAdapter(ArrayList<ClassInfo> _listClassInfo) {
-        this.listClassInfo = _listClassInfo;
-    }
-
     public class ClassInfoViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txtClassType, txtClassName, txtClassSchedule;
@@ -47,12 +43,8 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
         }
     }
 
-    public interface OnItemClickListener {
-        void OnItemClick(int position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener _clickListener) {
-        this.clickListener = _clickListener;
+    public ClassInfoAdapter(ArrayList<ClassInfo> _listClassInfo) {
+        this.listClassInfo = _listClassInfo;
     }
 
     @NonNull
@@ -80,4 +72,19 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
     public ClassInfo getItem(int position) {
         return listClassInfo.get(position);
     }
+
+    public interface OnItemClickListener {
+        void OnItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener _clickListener) {
+        this.clickListener = _clickListener;
+    }
+
+    public void filterList(ArrayList<ClassInfo> filteredList) {
+        listClassInfo = filteredList;
+        notifyDataSetChanged();
+    }
+
+
 }

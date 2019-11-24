@@ -34,6 +34,10 @@ public class MyClassFragment extends Fragment {
 
     private MyClassViewModel myClassViewModel;
 
+    public MyClassFragment (App _app) {
+        this.app = _app;
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myClassViewModel = ViewModelProviders.of(this).get(MyClassViewModel.class);
         View root = inflater.inflate(R.layout.fragment_myclass, container, false);
@@ -48,8 +52,6 @@ public class MyClassFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (app == null) app = (App) Objects.requireNonNull(this.getActivity()).getApplication();
 
         listClass = getClassByEmail(app.acc.getEmail());
     }
