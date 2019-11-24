@@ -8,9 +8,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorBlueTrans"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:background="@color/colorBlueTrans">
+        android:paddingEnd="10dp">
 
         <ImageView
             android:id="@+id/imgBack_studentProf"
@@ -20,9 +20,9 @@
             android:src="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
-            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:padding="15dp"
             android:text="Student's Profile"
             android:textColor="@color/colorBlack"
@@ -31,26 +31,59 @@
 
     </RelativeLayout>
 
-    <com.mikhaellopez.circularprogressbar.CircularProgressBar
-        android:id="@+id/progressBarBiru"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/txtAbsent_studentProf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1"
+            android:text="Absent: { % }" />
+
+        <TextView
+            android:id="@+id/txtPresent_studentProf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="Present: { % }" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pbarAbsent_studentProf"
+        style="?android:progressBarStyleHorizontal"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="100dp"
         android:layout_marginTop="100dp"
-        app:background_progressbar_color="#52bcf7"
-        app:background_progressbar_width="10dp"
-        app:progressbar_color="#F44336"
-        app:progressbar_width="10dp" />
+        android:progress="80"
+        android:progressDrawable="@drawable/pb_circular_red"
+        android:rotation="-90" />
+
+    <ProgressBar
+        android:id="@+id/pbarPresent_studentProf"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/pb_circular_blue"
+        android:rotation="-90" />
+
 
     <ImageView
-        android:id="@+id/fotoStudent"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="115dp"
+        android:layout_marginTop="125dp"
         android:maxWidth="50dp"
         android:maxHeight="50dp"
         android:src="@drawable/foto_student" />
@@ -58,7 +91,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="220dp"
-        android:layout_below="@id/progressBarBiru"
+        android:layout_below="@id/pbarPresent_studentProf"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="55dp"
         android:layout_marginTop="40dp"
@@ -66,13 +99,12 @@
         app:cardElevation="8dp">
 
         <TextView
-            android:id="@+id/txtNama"
+            android:id="@+id/txtName_studentProf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/progressBarBiru"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
-            android:text="Levina Khomulia"
+            android:text="{ NAME }"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -86,7 +118,6 @@
             android:rowCount="3">
 
             <TextView
-                android:id="@+id/txtNIM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NIM"
@@ -94,15 +125,14 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtIsiNIM"
+                android:id="@+id/txtId_studentProf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:text="03082170019"
+                android:text="{ ID }"
+                android:layout_marginStart="90dp"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtGPA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -111,7 +141,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtIsiGPA"
+                android:id="@+id/txtGPA_studentProf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="99dp"
@@ -120,7 +150,6 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/txtIntake"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -129,7 +158,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtIsiIntake"
+                android:id="@+id/txtIntake_studentProf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="95dp"

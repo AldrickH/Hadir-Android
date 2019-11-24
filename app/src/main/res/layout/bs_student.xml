@@ -48,9 +48,11 @@
             android:gravity="end">
 
             <TextView
+                android:id="@+id/txtViewProf_bs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View Profile" />
+                android:text="View Profile"
+                android:textColor="@color/colorBlue" />
 
         </LinearLayout>
 

@@ -43,8 +43,9 @@
             android:id="@+id/editTextEmail_regis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorBlack"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,8 +57,9 @@
             android:id="@+id/editTextName_regis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorBlack"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,8 +71,9 @@
             android:id="@+id/editTextPass_regis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorBlack"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/colorBlack" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:maxLines="1"
             android:textColor="@color/colorBlack" />
 
         <Button

@@ -44,6 +44,8 @@
         android:drawableStart="@drawable/ic_search_black_24dp"
         android:drawablePadding="5dp"
         android:hint="Search class or student..."
+        android:inputType="text"
+        android:maxLines="1"
         android:padding="5dp" />
 
     <androidx.core.widget.NestedScrollView

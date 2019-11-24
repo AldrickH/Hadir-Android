@@ -1,6 +1,7 @@
 package com.aldricklevina.hadir;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,7 @@ import java.util.Objects;
 
 public class BS_Student extends BottomSheetDialogFragment {
 
-    private TextView txtStudentName, txtStudentId;
+    private TextView txtStudentName, txtStudentId, txtViewProf;
     private Button btnSubmit;
 
     private ItemClickListener listener;
@@ -48,6 +49,7 @@ public class BS_Student extends BottomSheetDialogFragment {
 
         txtStudentName = view.findViewById(R.id.txtStudentName_bs);
         txtStudentId = view.findViewById(R.id.txtStudentId_bs);
+        txtViewProf = view.findViewById(R.id.txtViewProf_bs);
 
         btnSubmit = view.findViewById(R.id.btnSubmit_bs);
 
@@ -58,6 +60,16 @@ public class BS_Student extends BottomSheetDialogFragment {
             @Override
             public void onClick(View v) {
                 listener.onItemClick("BANGSATT");
+                dismiss();
+            }
+        });
+
+        txtViewProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                app.student = student;
+                Intent intent = new Intent(getActivity(), StudentProfile.class);
+                startActivity(intent);
                 dismiss();
             }
         });
