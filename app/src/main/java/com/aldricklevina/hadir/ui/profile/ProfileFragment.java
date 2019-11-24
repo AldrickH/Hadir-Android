@@ -12,11 +12,18 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.R;
 
 public class ProfileFragment extends Fragment {
 
+    private App app;
+
     private ProfileViewModel profileViewModel;
+
+    public ProfileFragment(App _app) {
+        this.app = _app;
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         profileViewModel = ViewModelProviders.of(this).get(ProfileViewModel.class);

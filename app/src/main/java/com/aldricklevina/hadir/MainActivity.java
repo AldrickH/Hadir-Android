@@ -36,23 +36,23 @@ public class MainActivity extends AppCompatActivity {
 
         if (app.listClassInfo == null) {
             app.listClassInfo = new ArrayList<>();
-            app.listClassInfo.add(new ClassInfo("K0001","21 November 2019", "Kalkulus", "admin", "12.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0002","22 November 2019", "DATA", "levina@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0003","21 November 2019", "Nanti Baru isi", "levina@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0004","19 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0005","15 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("C0001","21 November 2019", "Kalkulus", "admin", "12.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("C0002","22 November 2019", "DATA", "levina@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("C0003","21 November 2019", "Nanti Baru isi", "levina@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("C0004","19 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("C0005","15 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
         }
 
         if (app.listStudent == null) {
             app.listStudent = new ArrayList<>();
-            app.listStudent.add(new Student("S0001", "Aldrick Handinata", "K0001"));
-            app.listStudent.add(new Student("S0002", "Levina Khomulia", "K0001"));
-            app.listStudent.add(new Student("S0003", "Griselda Guinarto", "K0002"));
-            app.listStudent.add(new Student("S0004", "Muhammad Alibaba", "K0002"));
-            app.listStudent.add(new Student("S0005", "Ali daei", "K0003"));
-            app.listStudent.add(new Student("S0006", "Thomas", "K0003"));
-            app.listStudent.add(new Student("S0007", "Rey", "K00004"));
-            app.listStudent.add(new Student("S0008", "Robin acek", "K0004x"));
+            app.listStudent.add(new Student("S0001", "Aldrick Handinata", "C0001"));
+            app.listStudent.add(new Student("S0002", "Levina Khomulia", "C0001"));
+            app.listStudent.add(new Student("S0003", "Griselda Guinarto", "C0002"));
+            app.listStudent.add(new Student("S0004", "Muhammad Alibaba", "C0002"));
+            app.listStudent.add(new Student("S0005", "Ali daei", "C0003"));
+            app.listStudent.add(new Student("S0006", "Thomas", "C0003"));
+            app.listStudent.add(new Student("S0007", "Rey", "C00004"));
+            app.listStudent.add(new Student("S0008", "Robin acek", "C0004"));
         }
 
         if (app.isLogin) {
