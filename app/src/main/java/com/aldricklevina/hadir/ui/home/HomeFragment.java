@@ -271,7 +271,7 @@ public class HomeFragment extends Fragment {
             }
         }
 
-        recViewClassInfoAdapter.filterList(result);
+        recViewClassInfoAdapter.refreshList(result);
     }
 
     private void lastClicked() {

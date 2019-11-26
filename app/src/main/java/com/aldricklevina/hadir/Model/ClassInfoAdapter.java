@@ -81,10 +81,8 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
         this.clickListener = _clickListener;
     }
 
-    public void filterList(ArrayList<ClassInfo> filteredList) {
-        listClassInfo = filteredList;
+    public void refreshList(ArrayList<ClassInfo> _list) {
+        this.listClassInfo = _list;
         notifyDataSetChanged();
     }
-
-
 }
