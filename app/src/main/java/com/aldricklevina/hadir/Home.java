@@ -4,18 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.aldricklevina.hadir.Model.Account;
 import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.ui.home.HomeFragment;
 import com.aldricklevina.hadir.ui.myclass.MyClassFragment;
 import com.aldricklevina.hadir.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
@@ -28,8 +24,10 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        if (app == null) app = (App) this.getApplication();
+
         navView = findViewById(R.id.nav_view);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment(app)).commit();
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -38,13 +36,13 @@ public class Home extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_home:
-                        selectedFrag = new HomeFragment();
+                        selectedFrag = new HomeFragment(app);
                         break;
                     case R.id.navigation_myclass:
-                        selectedFrag = new MyClassFragment();
+                        selectedFrag = new MyClassFragment(app);
                         break;
                     case R.id.navigation_profile:
-                        selectedFrag = new ProfileFragment();
+                        selectedFrag = new ProfileFragment(app);
                         break;
                 }
 

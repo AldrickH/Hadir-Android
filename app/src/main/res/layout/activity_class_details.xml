@@ -18,9 +18,9 @@
             android:src="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
-            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:padding="15dp"
             android:text="Class Details"
             android:textColor="@color/colorBlack"
@@ -55,19 +55,19 @@
 
                 <TextView
                     android:id="@+id/txtTime_classDet"
-                    android:layout_below="@id/txtSubject_classDet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/txtSubject_classDet"
                     android:layout_marginTop="5dp"
-                    android:text="{ Time } "/>
+                    android:text="{ Time } " />
 
                 <TextView
                     android:id="@+id/txtDate"
-                    android:layout_toRightOf="@id/txtTime_classDet"
-                    android:layout_below="@id/txtSubject_classDet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/txtSubject_classDet"
                     android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/txtTime_classDet"
                     android:text="{ Day and Date }" />
             </RelativeLayout>
 
@@ -75,9 +75,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:baselineAligned="false"
                 android:orientation="horizontal"
-                android:weightSum="4"
-                android:baselineAligned="false">
+                android:weightSum="4">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -172,6 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Excuse" />
+
                 </LinearLayout>
 
             </LinearLayout>
