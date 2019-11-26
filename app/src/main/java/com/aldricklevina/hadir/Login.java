@@ -11,8 +11,6 @@ import android.widget.EditText;
 import com.aldricklevina.hadir.Model.Account;
 import com.aldricklevina.hadir.Model.App;
 
-import java.util.ArrayList;
-
 public class Login extends AppCompatActivity {
 
     private Button btnLogin, btnRegis;

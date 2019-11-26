@@ -1,6 +1,5 @@
 package com.aldricklevina.hadir.ui.profile;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,13 +7,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-<<<<<<< HEAD
 import android.widget.LinearLayout;
 import android.widget.TextView;
-=======
-import android.widget.TextView;
-import android.widget.Toast;
->>>>>>> pr/9
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -25,36 +19,19 @@ import androidx.lifecycle.ViewModelProviders;
 import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.R;
 
-<<<<<<< HEAD
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private EditText editTextName, editTextEmail, editTextPassword;
     private ImageView imgEditName, imgEditPass;
     private Button btnSave, btnCancel;
     private LinearLayout layoutEditProf;
-=======
-import java.util.Objects;
-
-public class ProfileFragment extends Fragment {
 
     private ProfileViewModel profileViewModel;
-    private TextView txtIsiFullName, txtIsiEmail;
 
-    private App app;
->>>>>>> pr/9
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-<<<<<<< HEAD
     private App app;
 
     public ProfileFragment(App _app) {
         this.app = _app;
-=======
-        if (app == null) app = (App) Objects.requireNonNull(this.getActivity()).getApplication();
->>>>>>> pr/9
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -73,7 +50,6 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-<<<<<<< HEAD
         editTextName = view.findViewById(R.id.editTextName_prof);
         editTextEmail = view.findViewById(R.id.editTextEmail_prof);
         editTextPassword = view.findViewById(R.id.editTextPassword_prof);
@@ -131,13 +107,5 @@ public class ProfileFragment extends Fragment {
 
             layoutEditProf.animate().translationY(200f).setDuration(1000);
         }
-=======
-        txtIsiFullName = view.findViewById(R.id.txtIsiFullName);
-        txtIsiEmail = view.findViewById(R.id.txtIsiEmail);
-
-        txtIsiFullName.setText(app.acc.getFullname());
-        txtIsiEmail.setText(app.acc.getEmail());
-
->>>>>>> pr/9
     }
 }

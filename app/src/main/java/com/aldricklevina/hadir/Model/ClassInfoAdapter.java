@@ -17,10 +17,6 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
     private ArrayList<ClassInfo> listClassInfo;
     private OnItemClickListener clickListener;
 
-    public ClassInfoAdapter(ArrayList<ClassInfo> _listClassInfo) {
-        this.listClassInfo = _listClassInfo;
-    }
-
     public class ClassInfoViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txtClassType, txtClassName, txtClassSchedule;
@@ -47,12 +43,8 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
         }
     }
 
-    public interface OnItemClickListener {
-        void OnItemClick(int position);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener _clickListener) {
-        this.clickListener = _clickListener;
+    public ClassInfoAdapter(ArrayList<ClassInfo> _listClassInfo) {
+        this.listClassInfo = _listClassInfo;
     }
 
     @NonNull
@@ -67,7 +59,7 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
     public void onBindViewHolder(@NonNull ClassInfoViewHolder holder, int position) {
         ClassInfo currentItem = listClassInfo.get(position);
 
-        holder.txtClassType .setText(currentItem.getDate());
+        holder.txtClassType.setText(currentItem.getDate());
         holder.txtClassName.setText(currentItem.getClassName());
         holder.txtClassSchedule.setText(currentItem.getTimeStart());
     }
@@ -81,8 +73,18 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
         return listClassInfo.get(position);
     }
 
-    public void refreshList(ArrayList<ClassInfo> _list) {
-        this.listClassInfo = _list;
+    public interface OnItemClickListener {
+        void OnItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener _clickListener) {
+        this.clickListener = _clickListener;
+    }
+
+    public void filterList(ArrayList<ClassInfo> filteredList) {
+        listClassInfo = filteredList;
         notifyDataSetChanged();
     }
+
+
 }

@@ -19,7 +19,6 @@ public class Register extends AppCompatActivity {
     private EditText editTextEmail, editTextName, editTextPass, editTextRePass;
     private ImageView imgBack;
     private Button btnRegis;
-    private Intent intent;
     private String email, name, pass, repass;
     private App app;
 

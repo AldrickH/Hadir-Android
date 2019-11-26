@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,7 +15,6 @@ import com.aldricklevina.hadir.Model.Student;
 import com.aldricklevina.hadir.Model.StudentAdapter;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class ClassDetails extends AppCompatActivity implements BS_Student.ItemClickListener {
 
@@ -22,30 +22,23 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
     private RecyclerView.LayoutManager recViewStudentLayoutManager;
     private StudentAdapter recViewStudentAdapter;
 
-    private ImageView imgBackClassDet;
+    private ImageView imgBack;
     private TextView txtSubject, txtTime;
-    private TextView txtPresent, txtLate, txtAbsent, txtExcuse;
-
-    private Student student;
 
     private ArrayList<Student> listStudent;
 
     private App app;
-
-    int present, late, absent, excuse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_details);
 
-//        if (app == null) app = (App) this.getApplication();
-
-        if (app == null) app = (App) Objects.requireNonNull(getApplication());
+        if (app == null) app = (App) this.getApplication();
 
         listStudent = getClassStudent(app.classInfo.getId());
 
-        imgBackClassDet = findViewById(R.id.imgBack_classDet);
+        imgBack = findViewById(R.id.imgBack_classDet);
 
         txtSubject = findViewById(R.id.txtSubject_classDet);
         txtTime = findViewById(R.id.txtTime_classDet);
@@ -70,24 +63,12 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
             }
         });
 
-        imgBackClassDet.setOnClickListener(new View.OnClickListener() {
+        imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-        txtPresent = findViewById(R.id.txtPresent_classDet);
-        txtLate = findViewById(R.id.txtLate_classDet);
-        txtAbsent = findViewById(R.id.txtAbsent_classDet);
-        txtExcuse = findViewById(R.id.txtExcuse_classDet);
-
-//        txtPresent.setText(recViewStudentAdapter.getJlhStatus());
-//        recViewStudentAdapter.getItem();
-
-//        txtPresent.setText(getJlhStatus());
-
-
     }
 
     public ArrayList<Student> getClassStudent(String _classId) {
@@ -102,42 +83,7 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
     }
 
     @Override
-    public int onItemClick(Student _student) {
-        for (Student student : app.listStudent) {
-            if (student.id.equals(_student.id)) student = _student;
-            break;
-        }
-
-        recViewStudentAdapter.notifyDataSetChanged();
-
-//        int jlhStudent = app.listStudent.size();
-//        return jlhStudent;
-
-//        return app.student.getStatus();
-
-
-        return 0;
+    public void onItemClick(String item) {
+        Log.i("berhasil", "onItemClick: berhasil" + item);
     }
-
-    public int getJlhStatus(){
-        this.onItemClick(student);
-        if (student.getStatus().equals("present")){
-            present++;
-            return present;
-        }else if(student.getStatus().equals("late")){
-            late++;
-            return late;
-        }else if(student.getStatus().equals("absent")){
-            absent++;
-            return absent;
-        }else if(student.getStatus().equals("excuse")){
-            excuse++;
-            return excuse;
-        }
-
-        return 0;
-    }
-
-
-
 }
