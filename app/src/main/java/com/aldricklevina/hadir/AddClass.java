@@ -141,6 +141,7 @@ public class AddClass extends AppCompatActivity {
                     }
                 }, mHourStart, mMinuteStart, false);
                 timePickerDialog.show();
+                
             }
         });
 
