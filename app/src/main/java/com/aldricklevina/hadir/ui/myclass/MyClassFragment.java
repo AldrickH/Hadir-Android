@@ -23,7 +23,6 @@ import com.aldricklevina.hadir.Model.ClassInfoAdapter;
 import com.aldricklevina.hadir.R;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class MyClassFragment extends Fragment {
 

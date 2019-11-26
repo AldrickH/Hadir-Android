@@ -2,9 +2,7 @@ package com.aldricklevina.hadir.Model;
 
 public class Student {
 
-    public String id, fullName, classId;
-
-    public String status;
+    private String id, fullName, classId, status;
 
     public Student(String _id, String _fullName, String _classId, String _status) {
         this.id = _id;

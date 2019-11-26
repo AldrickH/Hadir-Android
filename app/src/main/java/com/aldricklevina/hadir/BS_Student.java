@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,14 +19,16 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.Objects;
 
-public class BS_Student extends BottomSheetDialogFragment {
+public class BS_Student extends BottomSheetDialogFragment implements View.OnClickListener {
 
     private TextView txtStudentName, txtStudentId, txtViewProf;
     private Button btnSubmit;
-
-    private ItemClickListener listener;
+    private LinearLayout layoutPresent, layoutLate, layoutAbsent;
 
     private Student student;
+    private String status;
+
+    private ItemClickListener listener;
 
     private App app;
 
@@ -53,26 +56,18 @@ public class BS_Student extends BottomSheetDialogFragment {
 
         btnSubmit = view.findViewById(R.id.btnSubmit_bs);
 
+        layoutPresent = view.findViewById(R.id.layoutPresent_bs);
+        layoutLate = view.findViewById(R.id.layoutLate_bs);
+        layoutAbsent = view.findViewById(R.id.layoutAbsent_bs);
+
+        txtViewProf.setOnClickListener(this);
+        layoutPresent.setOnClickListener(this);
+        layoutLate.setOnClickListener(this);
+        layoutAbsent.setOnClickListener(this);
+        btnSubmit.setOnClickListener(this);
+
         txtStudentName.setText(student.getFullName());
         txtStudentId.setText(student.getId());
-
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClick("BANGSATT");
-                dismiss();
-            }
-        });
-
-        txtViewProf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                app.student = student;
-                Intent intent = new Intent(getActivity(), StudentProfile.class);
-                startActivity(intent);
-                dismiss();
-            }
-        });
     }
 
     @Override
@@ -92,7 +87,47 @@ public class BS_Student extends BottomSheetDialogFragment {
         listener = null;
     }
 
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+
+        if (id == R.id.txtViewProf_bs) {
+            app.student = student;
+            Intent intent = new Intent(getActivity(), StudentProfile.class);
+            startActivity(intent);
+            dismiss();
+        } else if (id == R.id.layoutPresent_bs) {
+            refreshChosenLayout();
+
+            status = "present";
+            layoutPresent.setBackgroundResource(R.drawable.bg_lightblue);
+        } else if (id == R.id.layoutLate_bs) {
+            refreshChosenLayout();
+
+            status = "late";
+            layoutLate.setBackgroundResource(R.drawable.bg_lightblue);
+        } else if (id == R.id.layoutAbsent_bs) {
+            refreshChosenLayout();
+
+            status = "absent";
+            layoutAbsent.setBackgroundResource(R.drawable.bg_lightblue);
+        } else if (id == R.id.btnSubmit_bs) {
+            if (!status.equals("")) {
+                student.setStatus(status);
+                listener.onItemClick(student);
+                dismiss();
+            }
+        }
+    }
+
     public interface ItemClickListener {
-        void onItemClick(String item);
+        void onItemClick(Student student);
+    }
+
+    private void refreshChosenLayout() {
+        layoutPresent.setBackgroundResource(R.drawable.bg_blue_stroke);
+        layoutLate.setBackgroundResource(R.drawable.bg_blue_stroke);
+        layoutAbsent.setBackgroundResource(R.drawable.bg_blue_stroke);
+        layoutPresent.setBackgroundResource(R.drawable.bg_blue_stroke);
     }
 }
