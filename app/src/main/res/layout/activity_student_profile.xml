@@ -43,7 +43,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_weight="1"
-            android:text="Absent: { % }" />
+            android:text="Absent: { % }"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/txtPresent_studentProf"
@@ -52,7 +53,8 @@
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
             android:gravity="end"
-            android:text="Present: { % }" />
+            android:text="Present: { % }"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <ProgressBar
