@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (app.listStudent == null) {
             app.listStudent = new ArrayList<>();
-            app.listStudent.add(new Student("S0001", "Aldrick Handinata", "K0001"));
-            app.listStudent.add(new Student("S0002", "Levina Khomulia", "K0001"));
-            app.listStudent.add(new Student("S0003", "Griselda Guinarto", "K0002"));
-            app.listStudent.add(new Student("S0004", "Muhammad Alibaba", "K0002"));
-            app.listStudent.add(new Student("S0005", "Ali daei", "K0003"));
-            app.listStudent.add(new Student("S0006", "Thomas", "K0003"));
-            app.listStudent.add(new Student("S0007", "Rey", "K00004"));
-            app.listStudent.add(new Student("S0008", "Robin acek", "K0004x"));
+            app.listStudent.add(new Student("S0001", "Aldrick Handinata", "K0001", ""));
+            app.listStudent.add(new Student("S0002", "Levina Khomulia", "K0001", ""));
+            app.listStudent.add(new Student("S0003", "Griselda Guinarto", "K0002", ""));
+            app.listStudent.add(new Student("S0004", "Muhammad Alibaba", "K0002", ""));
+            app.listStudent.add(new Student("S0005", "Ali daei", "K0003", ""));
+            app.listStudent.add(new Student("S0006", "Thomas", "K0003", ""));
+            app.listStudent.add(new Student("S0007", "Rey", "K00004", ""));
+            app.listStudent.add(new Student("S0008", "Robin acek", "K0004x", ""));
         }
 
         if (app.isLogin) {

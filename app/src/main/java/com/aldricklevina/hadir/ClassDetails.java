@@ -26,12 +26,13 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
     private TextView txtSubject, txtTime;
     private TextView txtPresent, txtLate, txtAbsent, txtExcuse;
 
-    private BS_Student bs_student;
+    private Student student;
 
     private ArrayList<Student> listStudent;
 
-
     private App app;
+
+    int present, late, absent, excuse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +82,11 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
         txtAbsent = findViewById(R.id.txtAbsent_classDet);
         txtExcuse = findViewById(R.id.txtExcuse_classDet);
 
-//        txtPresent.setText(bs_student.getJlhStatus());
+//        txtPresent.setText(recViewStudentAdapter.getJlhStatus());
+//        recViewStudentAdapter.getItem();
+
+//        txtPresent.setText(getJlhStatus());
+
 
     }
 
@@ -110,6 +115,25 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
 
 //        return app.student.getStatus();
 
+
+        return 0;
+    }
+
+    public int getJlhStatus(){
+        this.onItemClick(student);
+        if (student.getStatus().equals("present")){
+            present++;
+            return present;
+        }else if(student.getStatus().equals("late")){
+            late++;
+            return late;
+        }else if(student.getStatus().equals("absent")){
+            absent++;
+            return absent;
+        }else if(student.getStatus().equals("excuse")){
+            excuse++;
+            return excuse;
+        }
 
         return 0;
     }

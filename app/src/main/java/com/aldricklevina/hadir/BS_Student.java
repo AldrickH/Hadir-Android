@@ -2,6 +2,7 @@ package com.aldricklevina.hadir;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,8 @@ public class BS_Student extends BottomSheetDialogFragment {
     private App app;
 
     private ClassDetails classDetails;
+
+    private int position = 0 ;
 
     public BS_Student(Student _student) {
         this.student = _student;
@@ -75,7 +78,7 @@ public class BS_Student extends BottomSheetDialogFragment {
         txtPresent_bs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                student.status = "present";
+                student.setStatus("present");
                 layoutPresent.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutLate.setBackgroundResource(R.drawable.bg_white);
                 layoutAbsent.setBackgroundResource(R.drawable.bg_white);
@@ -86,7 +89,7 @@ public class BS_Student extends BottomSheetDialogFragment {
         txtLate_bs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                student.status = "late";
+                student.setStatus("late");
                 layoutLate.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutPresent.setBackgroundResource(R.drawable.bg_white);
                 layoutAbsent.setBackgroundResource(R.drawable.bg_white);
@@ -97,7 +100,7 @@ public class BS_Student extends BottomSheetDialogFragment {
         txtAbsent_bs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                student.status = "absent";
+                student.setStatus("absent");
                 layoutAbsent.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutPresent.setBackgroundResource(R.drawable.bg_white);
                 layoutLate.setBackgroundResource(R.drawable.bg_white);
@@ -108,7 +111,7 @@ public class BS_Student extends BottomSheetDialogFragment {
         txtExcuse_bs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                student.status = "excuse";
+                student.setStatus("excuse");
                 layoutExcuse.setBackgroundResource(R.drawable.bg_lightblue);
                 layoutPresent.setBackgroundResource(R.drawable.bg_white);
                 layoutLate.setBackgroundResource(R.drawable.bg_white);
@@ -116,10 +119,18 @@ public class BS_Student extends BottomSheetDialogFragment {
             }
         });
 
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onItemClick(student);
+                for (Student data: app.listStudent){
+                    if (data.getId().equals(student.getId())){
+                        app.listStudent.set(position, student);
+                    }else{
+                        position++;
+                    }
+                }
                 dismiss();
             }
         });
@@ -146,22 +157,22 @@ public class BS_Student extends BottomSheetDialogFragment {
         int onItemClick(Student _student);
     }
 
-    public void getJlhStatus(){
-        classDetails.onItemClick(student);
-        if (student.status.equals("present")){
-            present++;
+//    public int getJlhStatus(){
+//        classDetails.onItemClick(student);
+//        if (student.status.equals("present")){
+//            present++;
 //            return present;
-        }else if(student.status.equals("late")){
-            late++;
+//        }else if(student.status.equals("late")){
+//            late++;
 //            return late;
-        }else if(student.status.equals("absent")){
-            absent++;
+//        }else if(student.status.equals("absent")){
+//            absent++;
 //            return absent;
-        }else if(student.status.equals("excuse")){
-            excuse++;
+//        }else if(student.status.equals("excuse")){
+//            excuse++;
 //            return excuse;
-        }
-
+//        }
+//
 //        return 0;
-    }
+//    }
 }

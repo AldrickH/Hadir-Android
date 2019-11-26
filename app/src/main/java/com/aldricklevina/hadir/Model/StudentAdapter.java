@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aldricklevina.hadir.ClassDetails;
 import com.aldricklevina.hadir.R;
 
 import java.util.ArrayList;
@@ -16,6 +17,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     private ArrayList<Student> listStudent;
     private OnItemClickListener clickListener;
+
+    public ClassDetails classDetails;
+
+    public Student student;
 
     public StudentAdapter(ArrayList<Student> _listStudent) {
         this.listStudent = _listStudent;
@@ -79,4 +84,5 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public Student getItem(int position) {
         return listStudent.get(position);
     }
+
 }
