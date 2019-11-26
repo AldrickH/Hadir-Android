@@ -7,13 +7,12 @@
     android:orientation="vertical"
     tools:context=".AddClass">
 
-    <LinearLayout
-
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBlueTrans"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp">
+        android:paddingEnd="10dp"
+        android:background="@color/colorBlueTrans">
 
         <ImageView
             android:id="@+id/imgBack_addClass"
@@ -26,14 +25,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:gravity="center"
             android:padding="15dp"
             android:text="Add Class"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,7 +57,6 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center" />
-
 
     </LinearLayout>
 
