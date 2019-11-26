@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -33,6 +34,8 @@ public class MyClassFragment extends Fragment {
     private RecyclerView.LayoutManager recViewMyClassLayoutManager;
 
     private ImageView imgAddClass;
+
+    private TextView txtName_myClass;
 
     private App app;
 
@@ -67,6 +70,10 @@ public class MyClassFragment extends Fragment {
         recViewMyClass = view.findViewById(R.id.recViewMyClass);
 
         imgAddClass = view.findViewById(R.id.imgAddClass);
+
+        txtName_myClass = view.findViewById(R.id.txtName_myClass);
+
+        txtName_myClass.setText("Hi, " + app.acc.getFullname());
 
         recViewMyClassLayoutManager = new LinearLayoutManager(getActivity());
         recViewMyClassAdapter = new ClassInfoAdapter(listClass);
