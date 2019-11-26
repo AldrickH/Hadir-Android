@@ -50,12 +50,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        imgEditName = view.findViewById(R.id.imgEditName_prof);
+        imgEditPass = view.findViewById(R.id.imgEditPass_prof);
+
         editTextName = view.findViewById(R.id.editTextName_prof);
         editTextEmail = view.findViewById(R.id.editTextEmail_prof);
         editTextPassword = view.findViewById(R.id.editTextPassword_prof);
-
-        imgEditName = view.findViewById(R.id.imgEditName_prof);
-        imgEditPass = view.findViewById(R.id.imgEditPass_prof);
 
         btnSave = view.findViewById(R.id.btnSave_prof);
         btnCancel = view.findViewById(R.id.btnCancel_prof);

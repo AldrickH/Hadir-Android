@@ -3,6 +3,7 @@ package com.aldricklevina.hadir.Model;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,12 +21,14 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public class StudentViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txtStudentName, txtStudentId;
+        private ImageView imgStatus;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
 
             txtStudentName = itemView.findViewById(R.id.txtStudentName);
             txtStudentId = itemView.findViewById(R.id.txtStudentId);
+            imgStatus = itemView.findViewById(R.id.imgStatus);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -57,9 +60,21 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student currentItem = listStudent.get(position);
+        String status = currentItem.getStatus();
 
         holder.txtStudentName.setText(currentItem.getFullName());
         holder.txtStudentId.setText(currentItem.getId());
+
+        if (status.equals("present")) {
+            holder.imgStatus.setBackgroundResource(R.drawable.present);
+        } else if (status.equals("late")) {
+            holder.imgStatus.setBackgroundResource(R.drawable.late);
+        } else if (status.equals("absent")){
+            holder.imgStatus.setBackgroundResource(R.drawable.absent);
+        } else {
+            holder.imgStatus.setBackgroundResource(R.drawable.default_status);
+        }
+
     }
 
     @Override
@@ -80,8 +95,26 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         return listStudent.get(position);
     }
 
+    public int getItemCountBy(String str) {
+        int result = 0;
+
+        for (Student student : listStudent) {
+            if (student.getStatus().equalsIgnoreCase(str)) result += 1;
+        }
+
+        return result;
+    }
+
     public void filterList(ArrayList<Student> filteredList) {
         listStudent = filteredList;
+        notifyDataSetChanged();
+    }
+
+    public void setStudentStatus(Student _student) {
+        for (Student student : listStudent) {
+            if (student.getId().equals(_student.getId())) student.setStatus(_student.getStatus());
+        }
+
         notifyDataSetChanged();
     }
 }
