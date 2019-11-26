@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aldricklevina.hadir.ClassDetails;
 import com.aldricklevina.hadir.R;
 
 import java.util.ArrayList;
@@ -17,9 +18,18 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     private ArrayList<Student> listStudent;
     private OnItemClickListener clickListener;
 
+    public ClassDetails classDetails;
+
+    public Student student;
+
+    public StudentAdapter(ArrayList<Student> _listStudent) {
+        this.listStudent = _listStudent;
+    }
+
     public class StudentViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txtStudentName, txtStudentId;
+        TextView txtStudentName;
+        TextView txtStudentId;
 
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -42,8 +52,12 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         }
     }
 
-    public StudentAdapter(ArrayList<Student> _listStudent) {
-        this.listStudent = _listStudent;
+    public interface OnItemClickListener {
+        void OnItemClick(int position);
+    }
+
+    public void setOnItemClickListener(StudentAdapter.OnItemClickListener _clickListener) {
+        this.clickListener = _clickListener;
     }
 
     @NonNull
@@ -67,21 +81,8 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         return listStudent.size();
     }
 
-    public interface OnItemClickListener {
-        void OnItemClick(int position);
-    }
-
-    public void setOnItemClickListener(StudentAdapter.OnItemClickListener _clickListener) {
-        this.clickListener = _clickListener;
-    }
-
-
     public Student getItem(int position) {
         return listStudent.get(position);
     }
 
-    public void filterList(ArrayList<Student> filteredList) {
-        listStudent = filteredList;
-        notifyDataSetChanged();
-    }
 }

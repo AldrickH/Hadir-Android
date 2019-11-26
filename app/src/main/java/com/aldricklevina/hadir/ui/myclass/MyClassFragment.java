@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aldricklevina.hadir.AddClass;
 import com.aldricklevina.hadir.ClassDetails;
 import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.Model.ClassInfo;
@@ -30,13 +32,11 @@ public class MyClassFragment extends Fragment {
     private ClassInfoAdapter recViewMyClassAdapter;
     private RecyclerView.LayoutManager recViewMyClassLayoutManager;
 
+    private ImageView imgAddClass;
+
     private App app;
 
     private MyClassViewModel myClassViewModel;
-
-    public MyClassFragment (App _app) {
-        this.app = _app;
-    }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         myClassViewModel = ViewModelProviders.of(this).get(MyClassViewModel.class);
@@ -53,6 +53,8 @@ public class MyClassFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (app == null) app = (App) Objects.requireNonNull(this.getActivity()).getApplication();
+
         listClass = getClassByEmail(app.acc.getEmail());
     }
 
@@ -61,6 +63,8 @@ public class MyClassFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recViewMyClass = view.findViewById(R.id.recViewMyClass);
+
+        imgAddClass = view.findViewById(R.id.imgAddClass);
 
         recViewMyClassLayoutManager = new LinearLayoutManager(getActivity());
         recViewMyClassAdapter = new ClassInfoAdapter(listClass);
@@ -78,9 +82,23 @@ public class MyClassFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        imgAddClass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddClass.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    public ArrayList<ClassInfo> getClassByEmail(String _username) {
+    @Override
+    public void onResume() {
+        super.onResume();
+        recViewMyClassAdapter.refreshList(getClassByEmail(app.acc.getEmail()));
+    }
+
+    private ArrayList<ClassInfo> getClassByEmail(String _username) {
         ArrayList<ClassInfo> result = new ArrayList<>();
 
         for (ClassInfo classInfo : app.listClassInfo) {
@@ -88,7 +106,6 @@ public class MyClassFragment extends Fragment {
                 result.add(classInfo);
             }
         }
-
         return result;
     }
 }
