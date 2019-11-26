@@ -9,7 +9,7 @@
     <color name="colorBlack">#000000</color>
     <color name="colorRed">#FF0000</color>
 
-    <color name="colorGray">#5a5b5b</color>
+    <color name="colorGray">#5F5F5F</color>
     <color name="colorBlueTrans">#8052bcf7</color>
     <color name="colorBlue">#52bcf7</color>
 </resources>

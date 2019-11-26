@@ -4,289 +4,191 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/layoutJudul"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:background="@color/colorBlueTrans">
+        android:orientation="vertical">
 
-
-        <TextView
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/layoutJudul"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="Profile"
-            android:textColor="@color/colorBlack"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:background="@color/colorBlueTrans"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="My Profile"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/imgProf_prof"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:elevation="100dp"
+                    android:src="@drawable/photo_default" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/editTextName_prof"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="25dp"
+                            android:enabled="false"
+                            android:inputType="text" />
+
+                        <ImageView
+                            android:id="@+id/imgEditName_prof"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="-25dp"
+                            android:src="@drawable/ic_create_gray_24dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editTextEmail_prof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="25dp"
+                        android:enabled="false"
+                        android:inputType="textEmailAddress" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Password"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editTextPassword_prof"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="25dp"
+                        android:enabled="false"
+                        android:inputType="textPassword" />
+
+                    <ImageView
+                        android:id="@+id/imgEditPass_prof"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="-25dp"
+                        android:src="@drawable/ic_create_gray_24dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="100dp">
+        android:id="@+id/layoutEdit_prof"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_white"
+        android:elevation="8dp"
+        android:gravity="top"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:translationY="200dp"
+        android:weightSum="2">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnCancel_prof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_red"
+            android:text="Cancel" />
 
-            <ImageView
-                android:id="@+id/fotoDosen"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                android:elevation="100dp"
-                android:src="@drawable/foto_dosen" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="match_parent"
-                android:layout_height="235dp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="60dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp">
-
-                <TextView
-                    android:id="@+id/txtUsername"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="60dp"
-                    android:text="Username"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtIsiUsername"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="85dp"
-                    android:text="Mulia Dhamma"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/txtEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="125dp"
-                    android:text="Email"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtIsiEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="150dp"
-                    android:text="muliadhamma@gmail.com"
-                    android:textSize="16sp" />
-
-            </androidx.cardview.widget.CardView>
-
-        </RelativeLayout>
+        <Button
+            android:id="@+id/btnSave_prof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_green"
+            android:text="Save Changes" />
 
     </LinearLayout>
 
 </RelativeLayout>
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--    android:layout_width="match_parent"-->
-    <!--    android:layout_height="match_parent"-->
-    <!--    android:background="#eee"-->
-    <!--    android:orientation="vertical">-->
-
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="50dp"-->
-    <!--        android:background="#fff"-->
-    <!--        android:paddingStart="10dp"-->
-    <!--        android:paddingEnd="10dp">-->
-
-    <!--        <TextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_centerInParent="true"-->
-    <!--            android:text="My Profile"-->
-    <!--            android:textSize="20sp"-->
-    <!--            android:textStyle="bold" />-->
-
-    <!--    </RelativeLayout>-->
-
-    <!--    <ScrollView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:scrollbars="none">-->
-
-    <!--        <LinearLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:orientation="vertical">-->
-
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:background="#fff"-->
-    <!--                android:orientation="horizontal"-->
-    <!--                android:padding="10dp">-->
-
-    <!--                <ImageView-->
-    <!--                    android:layout_width="50dp"-->
-    <!--                    android:layout_height="50dp" />-->
-
-    <!--                <LinearLayout-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:layout_marginStart="10dp"-->
-    <!--                    android:orientation="vertical">-->
-
-    <!--                    <TextView-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:text="Mulia Dhamma"-->
-    <!--                        android:textSize="18sp"-->
-    <!--                        android:textStyle="bold" />-->
-
-    <!--                    <TextView-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:text="2019" />-->
-    <!--                </LinearLayout>-->
-
-    <!--            </LinearLayout>-->
-
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_gravity="center_horizontal"-->
-    <!--                android:layout_marginTop="20dp"-->
-    <!--                android:background="#fff"-->
-    <!--                android:orientation="vertical">-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-
-    <!--                <View-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="1dp"-->
-    <!--                    android:layout_marginStart="50dp"-->
-    <!--                    android:background="@color/colorPrimaryDark" />-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-
-    <!--                <View-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="1dp"-->
-    <!--                    android:layout_marginStart="50dp"-->
-    <!--                    android:background="@color/colorPrimaryDark" />-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-    <!--            </LinearLayout>-->
-
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_gravity="center_horizontal"-->
-    <!--                android:layout_marginTop="20dp"-->
-    <!--                android:background="#fff"-->
-    <!--                android:orientation="vertical">-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-    <!--            </LinearLayout>-->
-
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_gravity="center_horizontal"-->
-    <!--                android:layout_marginTop="20dp"-->
-    <!--                android:background="#fff"-->
-    <!--                android:orientation="vertical">-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-
-    <!--                <TextView-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:drawableStart="@drawable/ic_class_black_24dp"-->
-    <!--                    android:drawablePadding="10dp"-->
-    <!--                    android:gravity="center_vertical"-->
-    <!--                    android:padding="15dp"-->
-    <!--                    android:text="Personal Detail" />-->
-    <!--            </LinearLayout>-->
-
-    <!--        </LinearLayout>-->
-
-    <!--    </ScrollView>-->
-
-    <!--</LinearLayout>-->

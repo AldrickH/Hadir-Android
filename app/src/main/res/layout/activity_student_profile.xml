@@ -86,7 +86,7 @@
         android:layout_marginTop="125dp"
         android:maxWidth="50dp"
         android:maxHeight="50dp"
-        android:src="@drawable/foto_student" />
+        android:src="@drawable/photo_student_default" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
