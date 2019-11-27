@@ -106,7 +106,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             editTextName.setEnabled(false);
             editTextPassword.setEnabled(false);
 
-            layoutEditProf.animate().translationY(200f).setDuration(1000);
+            layoutEditProf.animate().translationY(500f).setDuration(1000);
         } else if (id == R.id.btnCancel_prof) {
             editTextName.setText(app.acc.fullname);
             editTextPassword.setText(app.acc.password);

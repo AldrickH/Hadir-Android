@@ -40,9 +40,20 @@ public class MainActivity extends AppCompatActivity {
             app.listClassInfo = new ArrayList<>();
             app.listClassInfo.add(new ClassInfo("K0001", "21 November 2019", "Kalkulus", "admin", "12.00 AM", "12.00 AM"));
             app.listClassInfo.add(new ClassInfo("K0002", "22 November 2019", "DATA", "levina@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0003", "21 November 2019", "Nanti Baru isi", "levina@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0004", "19 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0005", "15 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0003", "21 November 2019", "English", "levina@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0004", "19 November 2019", "Mobile Programming", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0005", "15 November 2019", "Cloud Computing", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0006", "27 November 2019", "Computer Security", "admin", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0007", "27 November 2019", "Matematika Diskrit", "admin", "15.00 AM", "17.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0008", "28 November 2019", "English", "admin", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0009", "26 November 2019", "Cloud Computing", "admin", "09.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0010", "27 November 2019", "Mobile Programming", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0011", "27 November 2019", "Kelas 1", "admin", "09.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0012", "27 November 2019", "Kelas 2", "admin", "09.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0013", "26 November 2019", "Kelas 3", "admin", "09.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0014", "26 November 2019", "Kelas 4", "admin", "09.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0015", "26 November 2019", "Kelas 5", "admin", "09.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0016", "1 January 2020", "Future Class", "admin", "09.00 AM", "12.00 AM"));
         }
 
         if (app.listStudent == null) {
@@ -53,8 +64,17 @@ public class MainActivity extends AppCompatActivity {
             app.listStudent.add(new Student("S0004", "Muhammad Alibaba", "K0002", ""));
             app.listStudent.add(new Student("S0005", "Ali daei", "K0003", ""));
             app.listStudent.add(new Student("S0006", "Thomas", "K0003", ""));
-            app.listStudent.add(new Student("S0007", "Rey", "K00004", ""));
-            app.listStudent.add(new Student("S0008", "Robin acek", "K0004x", ""));
+            app.listStudent.add(new Student("S0007", "Rey", "K0004", ""));
+            app.listStudent.add(new Student("S0008", "Robin acek", "K0004", ""));
+            app.listStudent.add(new Student("S0009", "Cek Dis", "K0006", ""));
+            app.listStudent.add(new Student("S0010", "Martin", "K0006", ""));
+            app.listStudent.add(new Student("S0011", "Acek", "K0006", ""));
+            app.listStudent.add(new Student("S0012", "Budi", "K0006", ""));
+            app.listStudent.add(new Student("S0013", "Cynthia", "K0006", ""));
+            app.listStudent.add(new Student("S0014", "Doraemon", "K0006", ""));
+            app.listStudent.add(new Student("S0015", "Acek Budi", "K0006", ""));
+            app.listStudent.add(new Student("S0016", "Acek Botak", "K0006", ""));
+
         }
 
         if (app.openApp) {

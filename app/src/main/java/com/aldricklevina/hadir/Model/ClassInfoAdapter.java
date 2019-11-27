@@ -62,7 +62,7 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
 
         holder.txtClassType.setText(currentItem.getDate());
         holder.txtClassName.setText(currentItem.getClassName());
-        holder.txtClassSchedule.setText(currentItem.getTimeStart());
+        holder.txtClassSchedule.setText(currentItem.getTimeStart() + " - " + currentItem.getTimeEnd());
     }
 
     @Override

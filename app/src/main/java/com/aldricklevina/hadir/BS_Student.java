@@ -33,16 +33,15 @@ public class BS_Student extends BottomSheetDialogFragment implements View.OnClic
 
     private App app;
 
-    public BS_Student(Student _student) {
+    public BS_Student(Student _student, App _app) {
         this.student = _student;
+        this.app = _app;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bs_student, container, false);
-
-        if (app == null) app = (App) Objects.requireNonNull(this.getActivity()).getApplication();
 
         return v;
     }

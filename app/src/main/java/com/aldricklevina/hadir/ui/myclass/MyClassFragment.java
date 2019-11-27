@@ -123,7 +123,7 @@ public class MyClassFragment extends Fragment {
 
                 new RecyclerViewSwipeDecorator.Builder(getActivity(), c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
                         .addSwipeLeftBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorRed))
-                        .addSwipeLeftActionIcon(R.drawable.ic_search_black_24dp)
+                        .addSwipeLeftActionIcon(R.drawable.ic_delete_white_24dp)
                         .create().decorate();
                 super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
             }
