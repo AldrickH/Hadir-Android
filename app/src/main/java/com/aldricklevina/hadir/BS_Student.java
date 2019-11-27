@@ -69,6 +69,16 @@ public class BS_Student extends BottomSheetDialogFragment implements View.OnClic
 
         txtStudentName.setText(student.getFullName());
         txtStudentId.setText(student.getId());
+
+        String status = student.getStatus();
+
+        if (status.equals("present")){
+            layoutPresent.setBackgroundResource(R.drawable.bg_lightblue);
+        }else if(status.equals("late")){
+            layoutLate.setBackgroundResource(R.drawable.bg_lightblue);
+        }else if(status.equals("absent")){
+            layoutAbsent.setBackgroundResource(R.drawable.bg_lightblue);
+        }
     }
 
     @Override
