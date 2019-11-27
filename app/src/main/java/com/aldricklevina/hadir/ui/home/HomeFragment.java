@@ -118,6 +118,7 @@ public class HomeFragment extends Fragment {
 
         recViewClassInfo.setLayoutManager(recViewClassInfoLayoutManager);
         recViewClassInfo.setAdapter(recViewClassInfoAdapter);
+        recViewClassInfo.setFocusable(false);
 
         recViewClassInfoAdapter.setOnItemClickListener(new ClassInfoAdapter.OnItemClickListener() {
             @Override
@@ -164,8 +165,6 @@ public class HomeFragment extends Fragment {
                 layoutSunClicked = true;
 
                 filterClassInfo(layoutSun.getTag().toString());
-
-                recViewClassInfo.setFocusable(false);
             }
         });
 
@@ -177,8 +176,6 @@ public class HomeFragment extends Fragment {
                 layoutMonClicked = true;
 
                 filterClassInfo(layoutMon.getTag().toString());
-
-                recViewClassInfo.setFocusable(false);
             }
         });
 
@@ -190,8 +187,6 @@ public class HomeFragment extends Fragment {
                 layoutTueClicked = true;
 
                 filterClassInfo(layoutTue.getTag().toString());
-
-                recViewClassInfo.setFocusable(false);
             }
         });
 
@@ -203,8 +198,6 @@ public class HomeFragment extends Fragment {
                 layoutWedClicked = true;
 
                 filterClassInfo(layoutWed.getTag().toString());
-
-                recViewClassInfo.setFocusable(false);
             }
         });
 
@@ -216,8 +209,6 @@ public class HomeFragment extends Fragment {
                 layoutThuClicked = true;
 
                 filterClassInfo(layoutThu.getTag().toString());
-
-                recViewClassInfo.setFocusable(false);
             }
         });
 
@@ -229,8 +220,6 @@ public class HomeFragment extends Fragment {
                 layoutFriClicked = true;
 
                 filterClassInfo(layoutFri.getTag().toString());
-
-                recViewClassInfo.setFocusable(false);
             }
         });
 
@@ -242,8 +231,6 @@ public class HomeFragment extends Fragment {
 
                 layoutSatClicked = true;
                 filterClassInfo(layoutSat.getTag().toString());
-
-                recViewClassInfo.setFocusable(false);
             }
         });
 
@@ -266,7 +253,7 @@ public class HomeFragment extends Fragment {
         ArrayList<ClassInfo> result = new ArrayList<>();
 
         for (ClassInfo classInfo : app.listClassInfo) {
-            if (classInfo.getDate().equals(_date)) {
+            if (classInfo.getDate().equals(_date) && classInfo.getLecturer().equals(app.acc.email)) {
                 result.add(classInfo);
             }
         }

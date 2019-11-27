@@ -69,13 +69,14 @@ public class ClassDetails extends AppCompatActivity implements BS_Student.ItemCl
 
         recViewStudent.setLayoutManager(recViewStudentLayoutManager);
         recViewStudent.setAdapter(recViewStudentAdapter);
+        recViewStudent.setFocusable(false);
 
         recViewStudent.setFocusable(false);
 
         recViewStudentAdapter.setOnItemClickListener(new StudentAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(int position) {
-                BS_Student bs_student = new BS_Student(recViewStudentAdapter.getItem(position));
+                BS_Student bs_student = new BS_Student(recViewStudentAdapter.getItem(position), app);
                 bs_student.show(getSupportFragmentManager().beginTransaction(), bs_student.getTag());
                 recViewStudentAdapter.notifyDataSetChanged();
             }

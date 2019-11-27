@@ -54,14 +54,20 @@ public class Register extends AppCompatActivity {
                 repass = editTextRePass.getText().toString();
 
                 if (!email.equals("") && !name.equals("") && !pass.equals("") && !repass.equals("")) {
-                    if (pass.equals(repass)) {
-                        app.listAcc.add(new Account(email, name, pass));
+                    if (!checkUserByEmail(email)) {
 
-                        Intent intent = new Intent(Register.this, Login.class);
-                        startActivity(intent);
-                        finish();
+
+                        if (pass.equals(repass)) {
+                            app.listAcc.add(new Account(email, name, pass));
+
+                            Intent intent = new Intent(Register.this, Login.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            editTextRePass.setError("Password not Match");
+                        }
                     } else {
-                        editTextRePass.setError("Password not Match");
+                        editTextEmail.setError("Email registered");
                     }
                 } else {
                     if (email.equals("")) {
@@ -82,6 +88,13 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public boolean checkUserByEmail(String str) {
+        for (Account acc : app.listAcc) {
+            if (acc.email.equalsIgnoreCase(str)) return true;
+        }
+        return false;
     }
 
 }
