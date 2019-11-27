@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class App extends Application {
 
     public boolean isLogin;
+    public boolean openApp = true;
     public Account acc;
     public ClassInfo classInfo;
     public Student student;

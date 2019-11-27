@@ -1,5 +1,6 @@
 package com.aldricklevina.hadir.ui.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.aldricklevina.hadir.MainActivity;
 import com.aldricklevina.hadir.Model.App;
 import com.aldricklevina.hadir.R;
 
@@ -23,7 +25,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private EditText editTextName, editTextEmail, editTextPassword;
     private ImageView imgEditName, imgEditPass;
-    private Button btnSave, btnCancel;
+    private Button btnSignOut, btnSave, btnCancel;
     private LinearLayout layoutEditProf;
 
     private ProfileViewModel profileViewModel;
@@ -57,6 +59,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         editTextEmail = view.findViewById(R.id.editTextEmail_prof);
         editTextPassword = view.findViewById(R.id.editTextPassword_prof);
 
+        btnSignOut = view.findViewById(R.id.btnSignOut_prof);
         btnSave = view.findViewById(R.id.btnSave_prof);
         btnCancel = view.findViewById(R.id.btnCancel_prof);
 
@@ -64,6 +67,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         imgEditName.setOnClickListener(this);
         imgEditPass.setOnClickListener(this);
+        btnSignOut.setOnClickListener(this);
         btnSave.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
 
@@ -90,6 +94,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             if (layoutEditProf.getTranslationY() != 0) {
                 layoutEditProf.animate().translationY(0).setDuration(1000);
             }
+        } else if (id == R.id.btnSignOut_prof) {
+            app.isLogin = false;
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            startActivity(intent);
+            getActivity().finish();
         } else if (id == R.id.btnSave_prof) {
             app.acc.fullname = editTextName.getText().toString();
             app.acc.password = editTextPassword.getText().toString();
