@@ -2,6 +2,7 @@ package com.aldricklevina.hadir;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import com.aldricklevina.hadir.Model.Account;
 import com.aldricklevina.hadir.Model.App;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Intent intent;
     private App app;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (app.listClassInfo == null) {
             app.listClassInfo = new ArrayList<>();
-            app.listClassInfo.add(new ClassInfo("K0001","21 November 2019", "Kalkulus", "admin", "12.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0002","22 November 2019", "DATA", "levina@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0003","21 November 2019", "Nanti Baru isi", "levina@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0004","19 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
-            app.listClassInfo.add(new ClassInfo("K0005","15 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0001", "21 November 2019", "Kalkulus", "admin", "12.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0002", "22 November 2019", "DATA", "levina@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0003", "21 November 2019", "Nanti Baru isi", "levina@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0004", "19 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
+            app.listClassInfo.add(new ClassInfo("K0005", "15 November 2019", "Nanti Baru isi", "aldrick@gmail.com", "11.00 AM", "12.00 AM"));
         }
 
         if (app.listStudent == null) {
@@ -55,6 +57,20 @@ public class MainActivity extends AppCompatActivity {
             app.listStudent.add(new Student("S0008", "Robin acek", "K0004x", ""));
         }
 
+        if (app.openApp) {
+            handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    switchActivity();
+                }
+            }, 3000);
+        } else {
+            switchActivity();
+        }
+    }
+
+    public void switchActivity() {
         if (app.isLogin) {
             intent = new Intent(MainActivity.this, Home.class);
             startActivity(intent);
@@ -65,4 +81,5 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
+
 }

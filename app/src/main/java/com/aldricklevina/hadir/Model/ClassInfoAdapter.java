@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.aldricklevina.hadir.R;
@@ -83,6 +84,13 @@ public class ClassInfoAdapter extends RecyclerView.Adapter<ClassInfoAdapter.Clas
 
     public void refreshList(ArrayList<ClassInfo> _list) {
         this.listClassInfo = _list;
+        notifyDataSetChanged();
+    }
+
+    public void deleteItem(String _id) {
+        for (ClassInfo classInfo : listClassInfo) {
+            if (classInfo.getId().equals(_id)) listClassInfo.remove(classInfo);
+        }
         notifyDataSetChanged();
     }
 }

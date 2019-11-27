@@ -1,6 +1,8 @@
 package com.aldricklevina.hadir.ui.myclass;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +12,11 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,12 +29,17 @@ import com.aldricklevina.hadir.R;
 
 import java.util.ArrayList;
 
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
+
 public class MyClassFragment extends Fragment {
 
     private ArrayList<ClassInfo> listClass;
+
     private RecyclerView recViewMyClass;
     private ClassInfoAdapter recViewMyClassAdapter;
     private RecyclerView.LayoutManager recViewMyClassLayoutManager;
+    private ItemTouchHelper itemTouchHelper;
+    private ItemTouchHelper.SimpleCallback itemTouchCallback;
 
     private ImageView imgAddClass;
 
@@ -40,7 +49,7 @@ public class MyClassFragment extends Fragment {
 
     private MyClassViewModel myClassViewModel;
 
-    public MyClassFragment (App _app) {
+    public MyClassFragment(App _app) {
         this.app = _app;
     }
 
@@ -90,6 +99,38 @@ public class MyClassFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        itemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                app.listClassInfo.remove(recViewMyClassAdapter.getItem(position));
+                switch (direction) {
+                    case ItemTouchHelper.LEFT:
+                        app.listClassInfo.remove(recViewMyClassAdapter.getItem(position));
+                        recViewMyClassAdapter.refreshList(getClassByEmail(app.acc.getEmail()));
+                        break;
+                }
+            }
+
+            @Override
+            public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+                new RecyclerViewSwipeDecorator.Builder(getActivity(), c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                        .addSwipeLeftBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorRed))
+                        .addSwipeLeftActionIcon(R.drawable.ic_search_black_24dp)
+                        .create().decorate();
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+            }
+        };
+
+        itemTouchHelper = new ItemTouchHelper(itemTouchCallback);
+        itemTouchHelper.attachToRecyclerView(recViewMyClass);
 
         imgAddClass.setOnClickListener(new View.OnClickListener() {
             @Override

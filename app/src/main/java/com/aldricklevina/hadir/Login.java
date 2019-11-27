@@ -39,6 +39,7 @@ public class Login extends AppCompatActivity {
                 for (Account acc : app.listAcc) {
                     if (editTextEmail.getText().toString().equals(acc.email) && editTextPass.getText().toString().equals(acc.password)) {
                         app.isLogin = true;
+                        app.openApp = false;
                         app.acc = acc;
                         break;
                     }

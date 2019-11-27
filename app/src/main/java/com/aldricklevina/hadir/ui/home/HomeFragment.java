@@ -251,13 +251,13 @@ public class HomeFragment extends Fragment {
     }
 
     private void refreshCalendar() {
-        layoutSun.setBackgroundResource(R.drawable.bg_blue_stroke);
-        layoutMon.setBackgroundResource(R.drawable.bg_blue_stroke);
-        layoutTue.setBackgroundResource(R.drawable.bg_blue_stroke);
-        layoutWed.setBackgroundResource(R.drawable.bg_blue_stroke);
-        layoutThu.setBackgroundResource(R.drawable.bg_blue_stroke);
-        layoutFri.setBackgroundResource(R.drawable.bg_blue_stroke);
-        layoutSat.setBackgroundResource(R.drawable.bg_blue_stroke);
+        if (layoutSunClicked) layoutSun.setBackgroundResource(R.drawable.bg_blue_stroke);
+        else if (layoutMonClicked) layoutMon.setBackgroundResource(R.drawable.bg_blue_stroke);
+        else if (layoutTueClicked) layoutTue.setBackgroundResource(R.drawable.bg_blue_stroke);
+        else if (layoutWedClicked) layoutWed.setBackgroundResource(R.drawable.bg_blue_stroke);
+        else if (layoutThuClicked) layoutThu.setBackgroundResource(R.drawable.bg_blue_stroke);
+        else if (layoutFriClicked) layoutFri.setBackgroundResource(R.drawable.bg_blue_stroke);
+        else if (layoutSatClicked) layoutSat.setBackgroundResource(R.drawable.bg_blue_stroke);
 
         layoutSunClicked = layoutMonClicked = layoutTueClicked = layoutWedClicked = layoutThuClicked = layoutFriClicked = layoutSatClicked = false;
     }
