@@ -3,6 +3,7 @@ package com.aldricklevina.hadir;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -114,6 +115,7 @@ public class BS_Student extends BottomSheetDialogFragment implements View.OnClic
         } else if (id == R.id.btnSubmit_bs) {
             if (!status.equals("")) {
                 student.setStatus(status);
+                Log.i("testing", "onClick: ");
                 listener.onItemClick(student);
                 dismiss();
             }

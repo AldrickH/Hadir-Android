@@ -1,5 +1,6 @@
 package com.aldricklevina.hadir.Model;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
 
-    private ArrayList<Student> listStudent;
+    private ArrayList<Student> listStudent, listStudentPermanent;
     private OnItemClickListener clickListener;
 
     public class StudentViewHolder extends RecyclerView.ViewHolder {
@@ -95,17 +96,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         return listStudent.get(position);
     }
 
-    public int getItemCountBy(String str) {
-        int result = 0;
-
-        for (Student student : listStudent) {
-            if (student.getStatus().equalsIgnoreCase(str)) result += 1;
-        }
-
-        return result;
-    }
-
-    public void filterList(ArrayList<Student> filteredList) {
+    public void refreshList(ArrayList<Student> filteredList) {
         listStudent = filteredList;
         notifyDataSetChanged();
     }
