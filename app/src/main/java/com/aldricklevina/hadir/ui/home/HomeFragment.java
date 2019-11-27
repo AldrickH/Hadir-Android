@@ -239,8 +239,8 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 refreshCalendar();
                 layoutSat.setBackgroundResource(R.drawable.bg_lightblue);
-                layoutSatClicked = true;
 
+                layoutSatClicked = true;
                 filterClassInfo(layoutSat.getTag().toString());
 
                 recViewClassInfo.setFocusable(false);

@@ -3,6 +3,7 @@ package com.aldricklevina.hadir;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,6 +69,16 @@ public class BS_Student extends BottomSheetDialogFragment implements View.OnClic
 
         txtStudentName.setText(student.getFullName());
         txtStudentId.setText(student.getId());
+
+        String status = student.getStatus();
+
+        if (status.equals("present")){
+            layoutPresent.setBackgroundResource(R.drawable.bg_lightblue);
+        }else if(status.equals("late")){
+            layoutLate.setBackgroundResource(R.drawable.bg_lightblue);
+        }else if(status.equals("absent")){
+            layoutAbsent.setBackgroundResource(R.drawable.bg_lightblue);
+        }
     }
 
     @Override
@@ -114,6 +125,7 @@ public class BS_Student extends BottomSheetDialogFragment implements View.OnClic
         } else if (id == R.id.btnSubmit_bs) {
             if (!status.equals("")) {
                 student.setStatus(status);
+                Log.i("testing", "onClick: ");
                 listener.onItemClick(student);
                 dismiss();
             }
